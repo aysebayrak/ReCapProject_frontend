@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Brand } from 'src/app/models/brand';
 
 @Component({
   selector: 'app-brand',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrandComponent implements OnInit {
 
+  brands:Brand[]=[];
   constructor() { }
 
   ngOnInit(): void {
