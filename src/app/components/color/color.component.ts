@@ -7,11 +7,16 @@ import { Color } from 'src/app/models/color';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
+
    colors:Color[]=[];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  getColors(){
+
   }
 
 }
