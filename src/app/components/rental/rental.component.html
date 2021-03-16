@@ -1,10 +1,32 @@
-<table class="table">
-    <tr *ngFor="let rental of rentals">
+<h2 class="text-center">Kiralama Listesi</h2>
+<div class="d-flex justify-content-center">
+    <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<table  *ngIf="dataLoaded==true" class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>Kiralama Numarası</th>
+            <th>Marka</th>
+            <th>Araba Numarası</th>
+            <th>Müşteri</th>
+            <th>Kiralama Tarihi</th>
+            <th>Teslim Alma Tarihi</th>
+
+
+
+        </tr>
+
+
+    </thead>
         <td>{{rental.rentalId}}</td>
+        <td>{{rental.brandName}}</td>
         <td>{{rental.carId}}</td>
-        <td>{{rental.customerId}}</td>
+        <td>{{rental.customerName}}</td>
         <td>{{rental.rentDate}}</td>
-        <td>{{rental.returnDate}}</td>
+        <td>{{(rental.returnDate==null)?"Teslim Alımadı":rental.returnDate | date:'dd--MM-YYYY'}}</td>
 
 
 
