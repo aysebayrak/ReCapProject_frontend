@@ -8,6 +8,7 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
+  currentColor:Color;
 
    colors:Color[]=[];
    dataLoaded=false;
@@ -25,5 +26,19 @@ export class ColorComponent implements OnInit {
     })
 
   }
+  setCurrentColor(color:Color){
+    this.currentColor=color;
+    
+  }
+  getCurrentColorClass(color:Color){
+    if(color==this.currentColor){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
+
+  }
+  
 
 }
