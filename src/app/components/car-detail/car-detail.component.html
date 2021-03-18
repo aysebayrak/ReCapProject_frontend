@@ -7,7 +7,7 @@
 
     <div *ngFor="let car of cars let i=index" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div *ngFor="let path of car.imagePath let i=index" [ngClass]="getSliderClassName(i)" >
+        <div *ngFor="let path of car.imagePath let i=index" [Class]="getSliderClassName(i)" >
           <img src="{{imageUrl}}/{{path}}"  class="d-block w-100" alt="Image">
         </div>
       </div>

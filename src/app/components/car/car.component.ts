@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarImage } from 'src/app/models/carImage';
 
 
 import { CarService } from 'src/app/services/car.service';
@@ -12,10 +13,11 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
- 
+  
+  carImages:CarImage[]=[]; 
   cars:Car[]=[];
   dataLoaded=false;
-  apiUrl="https://localhost:44301/"
+  imageUrl="https://localhost:44301/"
   
 
   constructor(private carService:CarService, private activatedRoute: ActivatedRoute) { }
