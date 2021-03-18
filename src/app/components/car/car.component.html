@@ -1,34 +1,23 @@
-<h2 class="text-center">Araba Listesi</h2>
-<div class="d-flex justify-content-center">
-
-
-   <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
-   </div>
-</div>
-  
-
-<table *ngIf="dataLoaded==true" class="table   table-success  table-striped">
-    <thead>
-        <tr>
-          <th>Araba Numarası</th>  
-          <th>Marka </th>
-          <th>Renk </th>
-          <th>Model Yılı</th>
-          <th>Günlük Kirası</th>
-          <th>Açıklama</th>
+  </div>
+  <div class="row" *ngIf="dataLoaded==true">
 
 
-
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars" >
-        <td>{{car.carId}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-    </tr>
-
-</table>
+<h3>Araç Listesi</h3>
+<div class="card"  *ngFor="let car of cars" style="width: 18rem;"  class="border border-dark">
+    <img width="350px" height="500px" src="{{imageUrl}}/{{car.imagePath[0]}}"  routerLink="/cars/details/{{car.id}}" class="card-img-top"  class="img-fluid img-thumbnail">
+    <div class="card-body">
+      <h5 class="card-title">{{car.description}}</h5>
+     
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Marka:{{car.brandName}}</li>
+      <li class="list-group-item">Model:{{car.modelYear}}</li>
+      <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice}}</li>
+    </ul>
+    <div class="card-body">
+        <button type="button" class="btn btn-primary btn-sm" routerLink="/cars/details/{{car.id}}" >Detay</button>
+        <button type="button" class="btn btn-secondary btn-sm">Kirala</button>
+    </div>
+  </div>

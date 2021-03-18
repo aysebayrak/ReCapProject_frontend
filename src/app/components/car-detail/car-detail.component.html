@@ -1,69 +1,50 @@
-<div *ngIf="dataLoaded==false" class="d-flex justify-content-center">
- <div class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
+<h5 class="p-3 mb-2 bg-secondary text-white">Araç Bilgisi</h5>
+  
+<div class="row">
+
+  <div class="col-md-8">
+
+
+    <div *ngFor="let car of cars let i=index" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let path of car.imagePath let i=index" [ngClass]="getSliderClassName(i)" >
+          <img src="{{imageUrl}}/{{path}}"  class="d-block w-100" alt="Image">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+
+
+  <div class="col-md-4">
+    <div *ngFor="let car of cars" class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          <strong> {{ car.description }}</strong>
+        </h5>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Marka : {{ car.brandName }}</li>
+        <li class="list-group-item">Renk : {{ car.colorName }}</li>
+        <li class="list-group-item">Model : {{ car.modelYear }}</li>    
+        <li class="list-group-item">
+          Günlük Kiralama Ücreti : {{ car.dailyPrice }} TL
+        </li>
+      </ul>
+
+      <div class="card-body">
+        <button type="button" class="btn btn-success">Kirala</button>
+      </div>
+    </div>
   </div>
 </div>
-<div *ngIf="dataLoaded==true" class="card mb-3">
-    <div *ngFor="let car of cars" class="card-header text-center">
-      <strong>
-          {{car.brandName}} - {{car.carModelYear}}
-      </strong>
-    </div>
-
-
-
-
-
-
-
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <table class="table table-success table-striped">
-      <thead>
-          <tr>
-            <th>Araba Numarası</th>
-            <th>Marka</th>
-            <th>Renk</th>
-            <th>Model</th>
-            <th>Günlük Kirası</th>
-            <th>Açıklama</th>
-
-
-
-          </tr>
-
-
-      </thead>
-      <tr *ngFor="let car of cars">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.carModelYear}}</td>
-        <td>{{car.carDailyPrice}}</td>
-        <td>{{car.carDescription}}</td>
-    </tr>
-</table>
-
-
-
-
-  </table>

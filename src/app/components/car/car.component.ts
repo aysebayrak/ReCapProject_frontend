@@ -15,6 +15,7 @@ export class CarComponent implements OnInit {
  
   cars:Car[]=[];
   dataLoaded=false;
+  apiUrl="https://localhost:44301/"
   
 
   constructor(private carService:CarService, private activatedRoute: ActivatedRoute) { }
@@ -41,6 +42,8 @@ export class CarComponent implements OnInit {
     this.carService.getCars().subscribe(response=>{
       this.cars=response.data
       this.dataLoaded=true;
+      console.log(response.data);
+      console.log(this.cars);
     })
    
 

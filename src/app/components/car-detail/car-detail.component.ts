@@ -15,7 +15,7 @@ export class CarDetailComponent implements OnInit {
   carImages:CarImage[]=[];
   cars:Car[]=[];
   dataLoaded = false;
-  apiUrl="https://localhost:44301";
+  apiUrl="https://localhost:44301/";
 
   constructor(private carService:CarService,
     private carImageService:CarImageService,
@@ -44,6 +44,13 @@ export class CarDetailComponent implements OnInit {
       this.dataLoaded = true;
       console.log(response.data);
     })
+  }
+  getSliderClassName(index:Number){
+    if(index == 0){
+      return "carousel-item active";
+    } else {
+      return "carousel-item";
+    }
   }
 
 
