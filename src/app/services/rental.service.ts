@@ -9,7 +9,7 @@ import { Rental } from '../models/rental';
   providedIn: 'root'
 })
 export class RentalService {
-  apiUrl="https://localhost:44301/api/rentals/getall"
+  apiUrl="https://localhost:44301/api/rentals/getrentaldetail"
 
 
   constructor(private httpClient:HttpClient) { }
