@@ -4,8 +4,8 @@
   <div class="row" *ngIf="dataLoaded==true">
 
 
-<h3>Araç Listesi</h3>
-<div class="card"  *ngFor="let car of cars" style="width: 18rem;"  class="border border-dark">
+<h5>Araç Listesi</h5>
+     <div class="card"  *ngFor="let car of cars" style="width: 18rem;"  class="border border-dark">
     <img width="350px" height="500px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/cardetailsbycarid/{{car.id}}" class="card-img-top"  class="img-fluid img-thumbnail">
     <div class="card-body">
       <h5 class="card-title">{{car.description}}</h5>
@@ -20,4 +20,4 @@
         <button type="button" class="btn btn-primary btn-sm" routerLink="/cars/carDetailsbycarıd/{{car.id}}" >Detay</button>
         <button type="button" class="btn btn-secondary btn-sm">Kirala</button>
     </div>
-  </div>
+   </div>
