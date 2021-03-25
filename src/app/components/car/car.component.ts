@@ -12,7 +12,7 @@ import { CarService } from 'src/app/services/car.service';
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
-export class CarComponent implements OnInit {
+export class CarComponent implements OnInit { 
   
   carImages:CarImage[]=[]; 
   cars:Car[]=[];
@@ -25,7 +25,7 @@ export class CarComponent implements OnInit {
   constructor(private carService:CarService, private activatedRoute: ActivatedRoute,
     private toastrService:ToastrService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    //componenr ilk açıldığnda çalışan kısım 
     this.activatedRoute.params.subscribe(params=>{
        console.log(params["brandId"])
       if(params["brandId"]){
@@ -42,7 +42,7 @@ export class CarComponent implements OnInit {
     
     
   }
-  getCars(){
+  getCars(){  //arabaları getir
     this.carService.getCars().subscribe(response=>{
       this.cars=response.data
       this.dataLoaded=true;
