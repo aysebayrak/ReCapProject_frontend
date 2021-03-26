@@ -1,6 +1,7 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
-</div> <!--yükleniyor kısmı -->
+</div> <!--yükleniyor kısmı    dataLoaded==false  data yükü değilse  rahat göeremk içim bwskende 
+controllere ekle getalle-->
 
 <h2>Araç Listesi</h2>
   <div class="row" *ngIf="dataLoaded==true">
@@ -30,3 +31,4 @@
   
 
   </div>
+  <!--thead=başlık eklek için-->

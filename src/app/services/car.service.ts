@@ -6,17 +6,19 @@ import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
 
 
-@Injectable({
+@Injectable({  //bu bir servis 
   providedIn: 'root'
 })
-export class CarService {
+  export class CarService {
   apiUrl="https://localhost:44301/api/"
 
-  constructor(private httpClient:HttpClient ) { }
+  constructor(private httpClient:HttpClient ) { }   
+
+
 
   getCars():Observable<ListResponseModel<Car>>{
      let newPath=this.apiUrl+"cars/getall";
-     return this.httpClient.get<ListResponseModel<Car>>(newPath);
+     return this.httpClient.get<ListResponseModel<Car>>(newPath);  //servisten api isği için 
     
 
   }
@@ -41,3 +43,7 @@ export class CarService {
 
 
 }
+
+//arayüzle ilgili genel çagrıları  api cağrılarını buna yazarız 
+//open ile   ng g service car 
+//kod yazarken direk serviceden başlayacağız

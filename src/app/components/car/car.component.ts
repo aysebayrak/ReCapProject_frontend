@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
-
 import { CarService } from 'src/app/services/car.service';
 
 
@@ -21,8 +20,9 @@ export class CarComponent implements OnInit {
   dataLoaded=false;
   imageUrl="https://localhost:44301"
   
-
-  constructor(private carService:CarService, private activatedRoute: ActivatedRoute,
+//constructor= carComponent bellekte olusşturmaK  NEW lemek 
+  constructor(private carService:CarService,  //servisi kullanabilmek için
+    private activatedRoute: ActivatedRoute,
     private toastrService:ToastrService) { }
 
   ngOnInit(): void {    //componenr ilk açıldığnda çalışan kısım 
@@ -39,16 +39,17 @@ export class CarComponent implements OnInit {
         this.getCars();
       }
     })
-    
+
     
   }
-  getCars(){  //arabaları getir
-    this.carService.getCars().subscribe(response=>{
+  getCars(){  //arabaları getir   
+    this.carService.getCars().subscribe(response=>{   //gelen yanıt  için 
       this.cars=response.data
-      this.dataLoaded=true;
+      this.dataLoaded=true;//yükleniyor
       console.log(response.data);
       console.log(this.cars);
     })
+     
    
 
   }
@@ -84,3 +85,4 @@ export class CarComponent implements OnInit {
   
 
 }
+//data koy ve yönet

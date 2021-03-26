@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import { BrowserModule } from '@angular/platform-browser'; 
+import {HttpClientModule} from '@angular/common/http' //hhttp istekleri için  apiye istekde bulunmak için
 import {FormsModule} from "@angular/forms"
 
 
@@ -37,7 +37,7 @@ import {ToastrModule} from "ngx-toastr"
     CarFilterComponent,
     PaymentComponent
   ],
-  imports: [
+  imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
