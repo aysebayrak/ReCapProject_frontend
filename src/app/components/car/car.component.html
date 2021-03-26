@@ -1,34 +1,34 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
+  <span class="visually-hidden">Loading...</span>
 </div> <!--yükleniyor kısmı    dataLoaded==false  data yükü değilse  rahat göeremk içim bwskende 
 controllere ekle getalle-->
 
 <h2>Araç Listesi</h2>
-  <div class="row" *ngIf="dataLoaded==true">
+<div class="row" *ngIf="dataLoaded==true">
 
-      
-     <div class="card"   *ngFor="let car of cars" style="width: 18rem;"  >
-    <img height="150px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/cardetailsbycarid/{{car.id}}" class="card-img-top" 
-      class="img-fluid img-thumbnail">
-    <div class="card-body">
-      <h5 class="card-title">{{car.description}}</h5>
-     
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Marka:{{car.brandName}}</li>
-      <li class="list-group-item">Model:{{car.modelYear}}</li>
-      <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice}}</li>
-    </ul>
-    <div class="card-body">
-      <section style="float:left">
-        <button type="button" class="btn btn-secondary  " routerLink="/cars/carDetailsbycarıd/{{car.id}}" >Detay</button>
-      </section>
-      <section style="float:right">
-
-        <button type="button" class="btn btn-secondary ">Kirala</button>
-      </section>
-    </div>
-  
-
+    
+   <div class="card"   *ngFor="let car of cars" style="width: 18rem;"  >
+  <img height="150px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/cardetailsbycarid/{{car.id}}" class="card-img-top" 
+    class="img-fluid img-thumbnail">
+  <div class="card-body">
+    <h5 class="card-title">{{car.description}}</h5>
+   
   </div>
-  <!--thead=başlık eklek için-->
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Marka:{{car.brandName}}</li>
+    <li class="list-group-item">Model:{{car.modelYear}}</li>
+    <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice}}</li>
+  </ul>
+  <div class="card-body">
+    <section style="float:left">
+      <button type="button" class="btn btn-secondary  " routerLink="/cars/carDetailsbycarıd/{{car.id}}" >Detay</button>
+    </section>
+    <section style="float:right">
+
+      <button type="button" class="btn btn-secondary ">Kirala</button>
+    </section>
+  </div>
+
+
+</div>
+<!--thead=başlık eklek için-->
