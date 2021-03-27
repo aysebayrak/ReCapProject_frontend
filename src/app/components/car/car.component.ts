@@ -16,7 +16,7 @@ export class CarComponent implements OnInit {
   carImages:CarImage[]=[]; 
   cars:Car[]=[];
   currentCar:Car;  //o anki calıştığım car   bunun için  "tsconfig.json a strictPropertyInitialization =false yapmalıyım "
-  filterText:string;
+  filterText:string; //gelen fitreyi okumak için
   dataLoaded=false;
   imageUrl="https://localhost:44301"
   

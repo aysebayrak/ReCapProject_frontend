@@ -1,15 +1,35 @@
   
-<ul *ngIf="dataLoaded==false"  class="list-group">
-    <li class="list-group-item active" aria-current="true">Renkler</li>
+<ul *ngIf="dataLoaded==false"  >
+    <!--<li class="list-group-item active" aria-current="true">Renkler</li>-->
     <div class="d-flex justify-content-center">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
   </ul>
-  <ul *ngIf="dataLoaded==true" class="list-group">
-    <li class="list-group-item active" aria-current="true">Renkler</li>
 
+
+  <div class="my-1">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="colorFilter" placeholder="Renk giriniz...">
+  </div> 
+<li [class] = "getAllColorClass()" routerLink = "/cars"></li>
+
+  <ul *ngIf="dataLoaded==true" class="list-group">
+    
+
+   <li (click)="setCurrentColor(color)" *ngFor="let color of colors | colorFilter:filterText" 
+    [class]="getCurrentColorClass(color)" routerLink = "/cars/color/{{color.id}}">{{color.colorName}}</li>
+  </ul>
+
+
+
+
+
+
+
+
+
+<!-- 
     <li (click)="setCurrentColor(color)" 
     routerLink="/cars/{{color.colorId}}" 
     *ngFor="let color of colors" 
@@ -18,3 +38,6 @@
   <h5 *ngIf="currentColor">{{currentColor.colorName}} seçtiniz</h5>
 
   
+
+
+  <li class="list-group-item active" aria-current="true">Renkler</li> -->

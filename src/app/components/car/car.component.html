@@ -1,7 +1,31 @@
+
+<app-car-filter></app-car-filter>
+
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div> <!--yükleniyor kısmı    dataLoaded==false  data yükü değilse  rahat göeremk içim bwskende 
 controllere ekle getalle-->
+
+
+
+
+
+<!-- <div class="mb-3">
+  <label for="filterText" class="form-label">Araba Getir</label>
+  <input type="text"  [(ngModel)]= "filterText"  class="form-control" id="fiterText" 
+  placeholder="arama ifadesi giriniz">
+</div> <!--filter için bosstrapten aldığım-->
+<!-- <div  *ngIf="filterText" class="alert alert-primay"> <!--arana kısmnımı mavi yaptı -->
+  <!-- {{filterText}}aradınız
+</div> --> 
+<!--buna bak
+*ngIf="filterText" = varsa --> 
+
+
+
+
+
+
 
 <h2>Araç Listesi</h2>
 <div class="row" *ngIf="dataLoaded==true">
@@ -15,10 +39,10 @@ controllere ekle getalle-->
    
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Marka:{{car.brandName}}</li>
+    <li class="list-group-item">Marka:{{car.brandName |uppercase}}</li> <!--hepsibni büyük harfle göster-->
     <li class="list-group-item">Model:{{car.modelYear}}</li>
-    <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice}}</li>
-  </ul>
+    <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice  |currency: "TRY":"symbol-narrow":"1.2-2"}}</li> <!--ek fiyat  currency =para birimi göster-->
+  </ul> 
   <div class="card-body">
     <section style="float:left">
       <button type="button" class="btn btn-secondary  " routerLink="/cars/carDetailsbycarıd/{{car.id}}" >Detay</button>

@@ -9,7 +9,7 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class ColorComponent implements OnInit {
   currentColor:Color;
-
+  filterText: string = "";
    colors:Color[]=[];
    dataLoaded=false;
 
