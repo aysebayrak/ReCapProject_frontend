@@ -17,3 +17,15 @@
      *ngFor="let brand of brands"
      [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
 </ul>
+
+
+<!--routerLink  =  belirli bir istege göre değişecek olsn kısmlarr -->
+<!--(click)="setCurrentBrand(brand)  : ben marka ya göre getirmek istersem eger bunu ts de yapacgım kodunu -->
+<!--[class]= eger ben bunu componenttteki bir bilgiye göre değiştirmekn istersem 
+  getCurrentBrandClass(brand)  = ıo anki markayı mavi yap 
+ routerLink="/cars/{{brand.brandId}}"  o anki markama ait arabalar gözüksün
+ 
+
+-->
+
+

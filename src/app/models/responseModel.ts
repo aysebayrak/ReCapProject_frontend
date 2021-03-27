@@ -3,3 +3,4 @@ export interface ResponseModel{
     message:string
 }
 //apımden gelecek olanlar 
+//backendimden gelen kısım 

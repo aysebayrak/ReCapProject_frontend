@@ -28,7 +28,7 @@ export class BrandComponent implements OnInit {
     })
   }
 
-  setCurrentBrand(brand: Brand){
+  setCurrentBrand(brand: Brand){//branda göre getir
    this.currentBrand = brand;
   }
 
@@ -37,12 +37,12 @@ export class BrandComponent implements OnInit {
     this.currentBrand = {brandId:-1,brandName:""};
   }
 
-  getCurrentBrandClass(brand: Brand){
-    if(brand == this.currentBrand) {
+  getCurrentBrandClass(brand: Brand){ //o anki seçtiğim markam mavi olsım dğer türlü olmasın  o anki seçtğiğni bana söyle
+    if(brand == this.currentBrand) {  //
       return "list-group-item active"
     }
     else {
-      return "list-group-item cursorPointer"
+      return "list-group-item cursorPointer" 
     }
   }
 
@@ -54,3 +54,6 @@ export class BrandComponent implements OnInit {
     }
   }
 }
+
+
+//npm install jquery = navbara lınk vernel için istall yap  bunu angular.jsonda belirt

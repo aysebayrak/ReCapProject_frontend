@@ -15,32 +15,35 @@ export class CarComponent implements OnInit {
   
   carImages:CarImage[]=[]; 
   cars:Car[]=[];
-  currentCar:Car;
+  currentCar:Car;  //o anki calıştığım car   bunun için  "tsconfig.json a strictPropertyInitialization =false yapmalıyım "
   filterText:string;
   dataLoaded=false;
   imageUrl="https://localhost:44301"
   
 //constructor= carComponent bellekte olusşturmaK  NEW lemek 
   constructor(private carService:CarService,  //servisi kullanabilmek için
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,  //roting için
     private toastrService:ToastrService) { }
 
   ngOnInit(): void {    //componenr ilk açıldığnda çalışan kısım 
     this.activatedRoute.params.subscribe(params=>{
-       console.log(params["brandId"])
-      if(params["brandId"]){
+       
+       if(params['brandId'] && params['colorId']){
+         this.getCarByColorAndBrand(params['brandId'],params['colorId'])
+         
+       }
+       else if(params["brandId"]){
        
         this.getCarsByBrandId(params["brandId"]);
       }
       else if(params["colorId"]){
         this.getCarsByColorId(params["colorId"]);
       }
+     
       else{
         this.getCars();
       }
     })
-
-    
   }
   getCars(){  //arabaları getir   
     this.carService.getCars().subscribe(response=>{   //gelen yanıt  için 
@@ -49,13 +52,11 @@ export class CarComponent implements OnInit {
       console.log(response.data);
       console.log(this.cars);
     })
-     
-   
 
   }
   
-  setCurrentCar(car: Car) {
-    this.currentCar = car;
+  setCurrentCar(car: Car) {  //cara  göre getir 
+    this.currentCar = car;  //gelen car benim carım  currentCar= o anki calıştıgım carım 
   }
 
   getCarsByBrandId(brandId:number){
@@ -81,8 +82,7 @@ export class CarComponent implements OnInit {
       }
     })
 
-}
-  
+  }
 
 }
-//data koy ve yönet
+//data koy ve yönet nasıl kullanacağını html de söyle 
