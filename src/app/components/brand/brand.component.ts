@@ -10,7 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
 
   brands: Brand[] = [];
-  currentBrand: Brand;
+  currentBrand: Brand;//o anki caliştiğim marakyı ,ttutmalk için
   filterText:string = "";
   dataLoaded = false;
 
@@ -28,7 +28,7 @@ export class BrandComponent implements OnInit {
     })
   }
 
-  setCurrentBrand(brand: Brand){//branda göre getir
+  setCurrentBrand(brand: Brand){//branda göre getir  marka seç ona göre getireyim  üstüne tıklama 
    this.currentBrand = brand;
   }
 

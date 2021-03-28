@@ -1,13 +1,11 @@
 <h5 class="p-3 mb-2 bg-secondary text-white">Araç Bilgisi</h5>
-  
+<div class="container">
 <div class="row">
-
   <div class="col-md-8">
-
 
     <div *ngFor="let car of cars let i=index" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div *ngFor="let path of car.imagePath let i=index" [Class]="getSliderClassName(i)" >
+        <div *ngFor="let path of car.imagePath let i=index" [ngClass]="getSliderClassName(i)" >
           <img src="{{imageUrl}}/{{path}}"  class="d-block w-100" alt="Image">
         </div>
       </div>
@@ -26,7 +24,7 @@
 
 
   <div class="col-md-4">
-    <div *ngFor="let car of cars" class="card">
+    <div *ngIf="car" class="card">
       <div class="card-body">
         <h5 class="card-title">
           <strong> {{ car.description }}</strong>
@@ -38,12 +36,12 @@
         <li class="list-group-item">Renk : {{ car.colorName }}</li>
         <li class="list-group-item">Model : {{ car.modelYear }}</li>    
         <li class="list-group-item">
-          Günlük Kiralama Ücreti : {{ car.dailyPrice }} TL
+          Günlük Kiralama Ücreti : {{ car.dailyPrice  | currency: "TRY":"symbol-narrow":"1.2-2"}} 
         </li>
       </ul>
 
       <div class="card-body">
-        <button type="button" class="btn btn-success">Kirala</button>
+        <app-rental [carForRent]="car"></app-rental>
       </div>
     </div>
   </div>

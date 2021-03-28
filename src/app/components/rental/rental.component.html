@@ -1,38 +1,54 @@
-<h2 class="text-center">Kiralama Listesi</h2>
-<div class="d-flex justify-content-center">
-    <div  *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#carForRent"> Kirala </button>
+
+<!-- Modal -->
+<div class="modal fade" id="carForRent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Aracı Kirala</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <h4>Tarih belirleyiniz</h4>
+      <div class="modal-body">
+        <div class="col-md-9" >
+          <div class="col">
+            <label for="rent-date" >Kiralama Tarihi: </label>
+            <div class="row">
+              <input
+                  [(ngModel)] = "rentDate" class="form-control" type="datetime-local"
+                  value="" id="rent-date" required />
+            </div>
+            <div class="row">
+              <label for="return-date">Teslim Tarihi: </label>
+              <input
+                  [(ngModel)] = "returnDate" class="form-control" type="datetime-local"
+                  value="" id="return-date" required />
+            </div>
+            
+          </div>
+          <div class="form-row">
+            <label for="select-customer">
+              müşteri seçiniz: </label><br>
+            <select
+              id="select-customer" class="custom-select"
+              [(ngModel)]="customerId"
+              aria-placeholder="All Customers"
+              type="number"
+            >
+              <option *ngFor="let customer of customers" type="number" [value]="customer.customerId">
+                {{customer.customerName}}
+              </option>
+            </select>
+          </div> 
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-target="#creditcard">Kapat</button>
+        <button type="button" class="btn btn-success"  data-bs-target="#creditcard" (click)="AddRental()">Onayla</button>
+        <app-payment *ngIf="isAdded" [rent]= "rental"></app-payment>
+       
+      </div>
+    </div>
+  </div>
 </div>
-
-<table  *ngIf="dataLoaded==true" class="table table-success table-striped">
-    <thead>
-        <tr>
-            <th>Kiralama Numarası</th>
-            <th>Marka</th>
-            <th>Araba Numarası</th>
-            <th>Müşteri</th>
-            <th>Kiralama Tarihi</th>
-            <th>Teslim Alma Tarihi</th>
-
-           
-
-        </tr>
-
-
-    </thead>
-        <tr>
-
-        <td>{{rental.rentalId}}</td>
-        <td>{{rental.brandName}}</td>
-        <td>{{rental.carId}}</td>
-        <td>{{rental.customerName}}</td>
-        <td>{{rental.rentDate}}</td>
-        <td>{{(rental.returnDate==null)?"Teslim Alımadı":rental.returnDate | date:'dd--MM-YYYY'}}</td>
-
-
-
-
-    </tr>
-
-</table>

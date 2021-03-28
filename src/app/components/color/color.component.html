@@ -1,26 +1,14 @@
-  
-<ul *ngIf="dataLoaded==false"  >
-    <!--<li class="list-group-item active" aria-current="true">Renkler</li>-->
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
-  </ul>
-
-
-  <div class="my-1">
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="colorFilter" placeholder="Renk giriniz...">
-  </div> 
-<li [class] = "getAllColorClass()" routerLink = "/cars"></li>
-
-  <ul *ngIf="dataLoaded==true" class="list-group">
-    
-
-   <li (click)="setCurrentColor(color)" *ngFor="let color of colors | colorFilter:filterText" 
-    [class]="getCurrentColorClass(color)" routerLink = "/cars/color/{{color.id}}">{{color.colorName}}</li>
-  </ul>
-
+<div *ngIf="dataLoaded==false" class="d-flex justify-content-center">
+  <div class="spinner-grow text-info" role="status" aria-hidden="true"></div>
+</div>
+<div class="my-1">
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="colorFilter" placeholder="Renk giriniz...">
+</div>
+<li [class] = "getAllColorClass()" routerLink = "/cars">Tüm Araçlar</li>
+<ul *ngIf="dataLoaded==true" class="list-group">
+  <li (click)="setCurrentColor(color)" *ngFor="let color of colors | colorFilter:filterText" 
+  [class]="getCurrentColorClass(color)" routerLink = "/cars/color/{{color.colorId}}">{{color.colorName}}</li>
+</ul>
 
 
 
