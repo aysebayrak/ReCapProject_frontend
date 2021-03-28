@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Car } from '../models/car';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 
 
 @Injectable({  //bu bir servis 
@@ -40,6 +41,10 @@ import { ListResponseModel } from '../models/listResponseModel';
   getCarByColorAndBrand(colorId:number, brandId:number) : Observable<ListResponseModel<Car>>{
     let newPath = this.apiUrl + "cars/getbycolorandbrandid?colorId="+colorId+"&brandId="+brandId;
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
+
+  }
+  add(car:Car):Observable<ResponseModel>{  //ekleme 
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
 
   }
 
