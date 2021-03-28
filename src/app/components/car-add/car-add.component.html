@@ -1,0 +1,45 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Araba Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="carAddForm">
+                    <div class="mb-3">
+                        <label for="brandName">Marka</label>
+                        <div class="form-group">
+                            <input type="text" id="brandName" formControlName="brandName" class="form-control"
+                                placeholder="araba markasını giriniz.." />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorName">Renk</label>
+                        <div class="form-group">
+                            <input type="text" id="colorName" formControlName="colorName" class="form-control"
+                                placeholder="araba rengini giriniz.." />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelYear">Model Yılı</label>
+                        <div class="form-group">
+                            <input type="number" id="modelYear" formControlName="modelYear" class="form-control"
+                                placeholder="araba model yılını  giriniz.." />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dailyPrice">Günlük Kiralama Ücreti</label>
+                        <div class="form-group">
+                            <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
+                                placeholder="kiralama ücretini giriniz.." />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Açıklama</label>
+                        <div class="form-group">
+                            <input type="text" id="description" formControlName="description" class="form-control"
+                                placeholder="eklenmek istenen..." />
+                        </div>
+                    </div>
+                </form>
+            </div>

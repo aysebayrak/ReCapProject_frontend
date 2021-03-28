@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
 import {HttpClientModule} from '@angular/common/http' //hhttp istekleri için  apiye istekde bulunmak için
-import {FormsModule} from "@angular/forms"  //[()]  caloşabilmesi için
+import {FormsModule,ReactiveFormsModule} from "@angular/forms"  //[()]  caloşabilmesi için
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +18,8 @@ import { CarFilterPipe } from './pipes/car-filter.pipe';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
 import { CarFilterComponent } from './components/car-filter/car-filter.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import {ToastrModule} from "ngx-toastr"
+import {ToastrModule} from "ngx-toastr";
+import { CarAddComponent } from './components/car-add/car-add.component'
 
 @NgModule({
   declarations: [
@@ -34,13 +35,15 @@ import {ToastrModule} from "ngx-toastr"
     CarFilterPipe,
     ColorFilterPipe,
     CarFilterComponent,
-    PaymentComponent
+    PaymentComponent,
+    CarAddComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })
