@@ -61,7 +61,7 @@ export class RentalComponent implements OnInit {
 
     this.rental = newRental
     this.isAdded=true
-    this.toastrService.success("Araç kiralama kaydınız başarıyla oluşturuldu");
+    this.toastrService.success("Araç kiralama işleminiz başarıyla gerçekleşti");
   }
 
 

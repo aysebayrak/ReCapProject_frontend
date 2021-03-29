@@ -59,9 +59,9 @@ export class PaymentComponent implements OnInit {
       customerName: this.customerName
 
     };
-    this.paymentService.addPayment(newPayment).subscribe(response =>{
+    this.paymentService. addPayment(newPayment).subscribe(response =>{
       this.isCheck = true;
-      this.toastrService.success("Ödeme işleminiz başarıyla tamamlandı");
+      this.toastrService.success("Ödeme işlemi Başarılı ");
     }) 
     
     this.rentalService.AddRental(this.rent).subscribe(response =>{
