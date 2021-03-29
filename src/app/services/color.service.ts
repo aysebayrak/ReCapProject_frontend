@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class ColorService {
-  apiUrl="https://localhost:44301/api/colors/getall"
+  apiUrl="https://localhost:44301/api/"
 
   constructor(private httpClient:HttpClient ) { }
   
@@ -18,9 +18,24 @@ export class ColorService {
     return this.httpClient.get<ListResponseModel<Color>>(this.apiUrl);
   }
 
-
-  add(color:Color):Observable<ResponseModel>{  //ekleme 
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"colors/add",color)
-
+  add(color: Color) : Observable<ResponseModel>{
+    let newPath =this.apiUrl + "colors/add"
+    return this.httpClient.post<ResponseModel>(newPath, color);
   }
+
+  update(color: Color) : Observable<ResponseModel>{
+    let newPath =this.apiUrl + "colors/update"
+    return this.httpClient.post<ResponseModel>(newPath, color);
+  }
+
+  delete(color: Color): Observable<ResponseModel>{
+    let newPath = this.apiUrl +"colors/delete";
+    return this.httpClient.post<ResponseModel>(newPath, color);
+  }
+
+  getByColorId(colorId : number): Observable<ListResponseModel<Color>>{
+    let newPath = this.apiUrl + "colors/getbycolorid?colorid="+colorId;
+    return this.httpClient.get<ListResponseModel<Color>>(newPath);
+  }
+
 }

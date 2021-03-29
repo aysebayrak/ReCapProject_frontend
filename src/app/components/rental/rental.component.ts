@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { Customer } from 'src/app/models/customer';
@@ -29,7 +30,7 @@ export class RentalComponent implements OnInit {
 
   constructor(private rentalService: RentalService,
     private customerService: CustomerService,
-    private toastrService:ToastrService,
+    private toastrService: ToastrService,
     private carService: CarService) { }
 
   ngOnInit(): void {
@@ -37,13 +38,14 @@ export class RentalComponent implements OnInit {
     this.getRentalDetails();
 
   }
+
   getRentalDetails(){
     this.rentalService.getRentalDetails().subscribe(response=>{
      this.rentaldto = response.data
     })
   }
   getRentalByCarId(carId: number){
-    this.carService.getCarDetailsByCarId(carId).subscribe(response=>{
+    this.carService.getCarDetails(carId).subscribe(response=>{
       this.cars= response.data;
     })
 
@@ -52,26 +54,26 @@ export class RentalComponent implements OnInit {
     let newRental:Rental = {
       rentDate: this.rentDate,
       returnDate: this.returnDate,
-      carId: this.carForRent.brandName,
+      carId: this.carForRent.id,
       customerId: this.customerId
     }
-
-  
+    //  this.rentalService. AddRental(newRental).subscribe(response=>{
+    //   this.toastrService.info("Ödeme sayfasına yönlendiriliyorsunuz");
+    //  })
 
     this.rental = newRental
     this.isAdded=true
-    this.toastrService.success("Araç kiralama  işleminiz başarılı");
+    this.toastrService.success("Araç kiralama kaydınız başarıyla oluşturuldu");
   }
-  getCustomers(){
+
+
+    getCustomers(){
     this.customerService.getCustomers().subscribe(response=>{
       this.customers=response.data
     });
   }
-
-
-
-
 }
+
  
 
 

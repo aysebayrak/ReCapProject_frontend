@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
 import {HttpClientModule} from '@angular/common/http' //hhttp istekleri için  apiye istekde bulunmak için
 import {FormsModule,ReactiveFormsModule} from "@angular/forms"  //[()]  caloşabilmesi için
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +22,13 @@ import { PaymentComponent } from './components/payment/payment.component';
 import {ToastrModule} from "ngx-toastr";
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
-import { ColorAddComponent } from './components/color-add/color-add.component'
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { BrandListComponent } from './components/brand-list/brand-list.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { CarListComponent } from './components/car-list/car-list.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +47,13 @@ import { ColorAddComponent } from './components/color-add/color-add.component'
     PaymentComponent,
     CarAddComponent,
     BrandAddComponent,
-    ColorAddComponent
+    ColorAddComponent,
+    BrandListComponent,
+    BrandUpdateComponent,
+    CarListComponent,
+    CarUpdateComponent,
+    ColorListComponent,
+    ColorUpdateComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,
@@ -48,6 +61,7 @@ import { ColorAddComponent } from './components/color-add/color-add.component'
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

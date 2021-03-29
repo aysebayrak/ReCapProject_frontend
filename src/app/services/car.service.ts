@@ -43,11 +43,21 @@ import { ResponseModel } from '../models/responseModel';
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
 
   }
-  add(car:Car):Observable<ResponseModel>{  //ekleme 
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
-
+  
+  add(car: Car): Observable<ResponseModel>{
+    let newPath = this.apiUrl +"cars/add";
+    return this.httpClient.post<ResponseModel>(newPath,car);
   }
 
+  delete(car: Car): Observable<ResponseModel>{
+    let newPath = this.apiUrl +"cars/delete";
+    return this.httpClient.post<ResponseModel>(newPath,car);
+  }
+
+  update(car: Car): Observable<ResponseModel>{
+    let newPath = this.apiUrl +"cars/update";
+    return this.httpClient.post<ResponseModel>(newPath,car);
+  }
 
 }
 

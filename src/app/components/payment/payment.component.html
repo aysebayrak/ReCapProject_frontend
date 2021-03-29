@@ -1,1 +1,71 @@
-<p>payment works!</p>
+<button type="button" class="btn btn-success me-3" data-bs-toggle="modal" data-bs-target="#creditcard">
+    Ödeme Yap 
+   </button>
+   <!-- Modal -->
+   <div class="modal fade" id="creditcard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="creditcard">Kart Bilgileri</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <div class="icons">
+             <img src="https://img.icons8.com/color/48/000000/visa.png" />
+             <img
+               src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
+             />
+             <img src="https://img.icons8.com/color/48/000000/maestro.png" />
+           </div>
+           <div class="col-md-9" >
+             <div class="col">
+         
+                 <div class="my-3">
+                   <div class="form-check">
+                     <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                     <label class="form-check-label" for="credit">Kredi Kartı</label>
+                   </div>
+                   <div class="form-check">
+                     <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                     <label class="form-check-label" for="debit">Banka Kartı</label>
+                   </div>
+                   <div class="row">
+                   <div class="col-md-6">
+                 <label for="customerName">Kart Üzerindeki İsim: </label>
+                 <input [(ngModel)] = "customerName" class="form-control" type="text" value="" id="customerName"  required/>
+               </div>
+               <div class="col-md-6">
+               
+                 <label for="creditCardNumber">Kredi Kart Numarası: </label>
+                 <input [(ngModel)] = "creditCardNumber" class="form-control" type="text" value="" id="creditCardNumber" required/>
+               </div>
+               <div class="col-md-6">
+                 <label for="securityCode">Güvenlik Kodu: </label>
+                 <input [(ngModel)] = "securityCode" class="form-control" type="text"value="" id="securityCode" required/>
+               </div>
+               <div class="col-md-6">
+                 <label for="expirationDate">Son Kullanma Tarihi: </label>
+                 <input [(ngModel)] = "expirationDate" class="form-control" type="text"value="" id="expirationDate" placeholder="12/2021" required/>
+               </div>
+               <div class="col-md-4">
+                   <label for="dailyPrice">Fiyat: </label>
+                 <input [(ngModel)] = "price" class="form-control" type="number" value="" id="dailyPrice" required/>
+               </div>
+               
+               <div class="col-md-4">
+                   <label for="creditCardPassword">Şifre: </label>
+                   <input [(ngModel)] = "creditCardPassword" class="form-control"  type="password"value="" id="creditCardPassword"/>
+                 </div>
+             </div>
+           </div>
+   
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">İptal</button>
+           <button type="button" class="btn btn-warning" name="isCheck" ngDefaultControl (click)=" addPayment()"> Ödeme Yap</button>
+         </div>
+       </div>
+     </div>
+   </div> 
+   
