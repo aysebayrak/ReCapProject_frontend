@@ -42,7 +42,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.activateRoute.params.subscribe(params=>{
       if(params["carId"]){
-        this.getCarDetails(params["carId"])
+        this. getCarDetailsByCarId(params["carId"])
         this.getCustomers()
       }else{
         
@@ -69,9 +69,9 @@ export class PaymentComponent implements OnInit {
     })
   }
 
-  getCarDetails(carId:number)
+  getCarDetailsByCarId(carId:number)
   {
-    this.carService.getCarDetails(carId).subscribe(response => {
+    this.carService. getCarDetailsByCarId(carId).subscribe(response => {
       this.car = response.data[0];
       console.log(response);
     })

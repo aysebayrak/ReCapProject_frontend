@@ -45,7 +45,7 @@ export class RentalComponent implements OnInit {
     })
   }
   getRentalByCarId(carId: number){
-    this.carService.getCarDetails(carId).subscribe(response=>{
+    this.carService.getCarDetailsByCarId(carId).subscribe(response=>{
       this.cars= response.data;
     })
 
@@ -54,12 +54,10 @@ export class RentalComponent implements OnInit {
     let newRental:Rental = {
       rentDate: this.rentDate,
       returnDate: this.returnDate,
-      carId: this.carForRent.id,
+      carId: this.carForRent.carId,
       customerId: this.customerId
     }
-    //  this.rentalService. AddRental(newRental).subscribe(response=>{
-    //   this.toastrService.info("Ödeme sayfasına yönlendiriliyorsunuz");
-    //  })
+  
 
     this.rental = newRental
     this.isAdded=true

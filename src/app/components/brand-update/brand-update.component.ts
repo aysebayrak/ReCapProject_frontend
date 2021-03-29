@@ -31,7 +31,7 @@ export class BrandUpdateComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       if ([params['brandId']]) {
         this.brandId = parseInt(params['brandId']);
-        this.getById, params['brandId'];
+        this.getByBrandId, params['brandId'];
       }
     });
     this.createBrandFrom();
@@ -44,7 +44,7 @@ export class BrandUpdateComponent implements OnInit {
     });
   }
 
-  getById(brandId: number) {
+  getByBrandId(brandId: number) {
     this.brandService.getByBrandId(brandId).subscribe((response) => {
       this.brands = response.data;
     });

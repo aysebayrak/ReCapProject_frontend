@@ -5,5 +5,5 @@ export interface Payment {
     creditCardNumber:string;
     expirationDate:string;
     securityCode:string;
-    creditCardPassword?: string;
+    creditCardPassword: string;
 }
