@@ -56,6 +56,8 @@ export class RentalComponent implements OnInit {
       returnDate: this.returnDate,
       carId: this.carForRent.carId,
       customerId: this.customerId
+      
+
     }
   
 

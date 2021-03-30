@@ -57,6 +57,9 @@ export class PaymentComponent implements OnInit {
       securityCode : this.securityCode,
       price : this.price,
       customerName: this.customerName
+      
+
+
 
     };
     this.paymentService. addPayment(newPayment).subscribe(response =>{
