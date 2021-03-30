@@ -65,3 +65,4 @@ import { ResponseModel } from '../models/responseModel';
 //open ile   ng g service car 
 //kod yazarken direk serviceden başlayacağız
 //controler ile (api) dişarı açtık  (getall)
+
