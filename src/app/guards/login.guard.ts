@@ -29,3 +29,6 @@ export class LoginGuard implements CanActivate {
   }
   
 }
+  //işlemi yapacak kişinin izni(token) varmı varsa devam yoksa ...(car add işlemi ..)
+  //izni yoksa logine yönlendir   
+  //ve app.routing de cars/add senin   guarden şu de 
