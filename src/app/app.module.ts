@@ -28,7 +28,8 @@ import { BrandUpdateComponent } from './components/brand-update/brand-update.com
 import { CarListComponent } from './components/car-list/car-list.component';
 import { CarUpdateComponent } from './components/car-update/car-update.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
-import { ColorUpdateComponent } from './components/color-update/color-update.component'
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { LoginComponent } from './components/login/login.component'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ColorUpdateComponent } from './components/color-update/color-update.com
     CarListComponent,
     CarUpdateComponent,
     ColorListComponent,
-    ColorUpdateComponent
+    ColorUpdateComponent,
+    LoginComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,

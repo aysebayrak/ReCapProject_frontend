@@ -13,6 +13,7 @@ import { ColorAddComponent } from './components/color-add/color-add.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color-update/color-update.component';
 import { ColorComponent } from './components/color/color.component';
+import { LoginComponent } from './components/login/login.component';
 import { RentalComponent } from './components/rental/rental.component';
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: "brands/update/:brandId",component:BrandUpdateComponent},
   {path: 'colors/list',component:ColorListComponent},
   {path: "colors/update/:colorId",component:ColorUpdateComponent},
+  {path:"login",component:LoginComponent}
 
 ];
 
