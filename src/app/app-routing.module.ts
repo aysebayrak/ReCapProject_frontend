@@ -39,9 +39,7 @@ const routes: Routes = [
   {path: 'colors/list',component:ColorListComponent},
   {path: "colors/update/:colorId",component:ColorUpdateComponent},
   {path:"register",component:RegisterComponent},
-  {path:"login",component:LoginComponent,}
-
-
+  {path:"login",component:LoginComponent},
   {path:"login",component:LoginComponent}
 
 ];

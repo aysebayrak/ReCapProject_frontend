@@ -1,5 +1,5 @@
 export interface Payment {
-    paymentId:number,
+    paymentId?:number,
    // customerName: string;
    customerId:number;
     price: number;

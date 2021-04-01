@@ -17,7 +17,7 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class RentalComponent implements OnInit {
   customers : Customer[] = [];
-  cars : Car[] = [];
+  cars : CarDto;
   rentals: Rental[] = []; 
   rentaldto: RentalDto[];
   rental: Rental;
@@ -47,7 +47,7 @@ export class RentalComponent implements OnInit {
   }
   getRentalByCarId(carId: number){
     this.carService.getCarDetailsByCarId(carId).subscribe(response=>{
-      this.cars= response.data;
+      this.cars= response.data[0];
     })
 
   }

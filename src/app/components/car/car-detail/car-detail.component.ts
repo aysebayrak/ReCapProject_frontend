@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
+import { CarDto } from 'src/app/models/carDto';
 import { CarImage } from 'src/app/models/carImage';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
@@ -13,9 +14,9 @@ import { CarService } from 'src/app/services/car.service';
 export class CarDetailComponent implements OnInit {
 
   carImages:CarImage[]=[];
-  cars:Car[]=[];
+  car:CarDto;
   dataLoaded = false;
-  imageUrl="https://localhost:44301/";
+  imageUrl="https://localhost:44301";
 
   constructor(private carService:CarService,
     private carImageService:CarImageService,
@@ -33,14 +34,18 @@ export class CarDetailComponent implements OnInit {
   }
   getCarDetailsByCarId(carId:number){
     this.carService.getCarDetailsByCarId(carId).subscribe(response=>{
-      this.cars=response.data;
+      this.car=response.data[0];
       this.dataLoaded=true;
     }
       )
 
-  } getCarImagesByCarId(carId:number){
+  } 
+  getCarImagesByCarId(carId:number)
+  {
+   
     this.carImageService.getCarImagesByCarId(carId).subscribe(response => {
       this.carImages = response.data;
+     
       this.dataLoaded = true;
       
     })

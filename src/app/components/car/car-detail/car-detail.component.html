@@ -3,10 +3,11 @@
 <div class="row">
   <div class="col-md-8">
 
-    <div *ngFor="let car of cars let i=index" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div *ngFor="let path of car.imagePath let i=index" [ngClass]="getSliderClassName(i)" >
-          <img src="{{imageUrl}}/{{path}}"  class="d-block w-100" alt="Image">
+    <div *ngFor="let car of carImages let i=index" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner  " >
+        <div [ngClass]="getSliderClassName(i)" >
+          <img src="{{imageUrl}}{{car.imagePath}}"  class="d-block w-100" alt="Image">
+        
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">

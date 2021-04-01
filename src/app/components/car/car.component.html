@@ -28,21 +28,21 @@ controllere ekle getalle-->
 <div class="row" *ngIf="dataLoaded==true">
 
     
-   <div class="card"   *ngFor="let car of cars" style="width: 18rem;"  >
-  <img height="150px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/cardetailsbycarid/{{car.id}}" class="card-img-top" 
+   <div class="card"   *ngFor="let car of carImages" style="width: 18rem;"  >
+  <img height="150px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/details/{{car.carId}}" class="card-img-top" 
     class="img-fluid img-thumbnail">
   <div class="card-body">
     <h5 class="card-title">{{car.description}}</h5>
    
   </div>
-  <ul class="list-group list-group-flush">
+  <ul  class="list-group list-group-flush">
     <li class="list-group-item">Marka:{{car.brandName |uppercase}}</li> <!--hepsibni büyük harfle göster-->
     <li class="list-group-item">Model:{{car.modelYear}}</li>
     <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice  |currency: "TRY":"symbol-narrow":"1.2-2"}}</li> <!--ek fiyat  currency =para birimi göster-->
   </ul> 
   <div class="card-body">
     <section style="float:left">
-      <button type="button" class="btn btn-secondary  " routerLink="/cars/carDetailsbycarıd/{{car.id}}" >Detay</button>
+      <button type="button" class="btn btn-secondary  " routerLink="/cars/details/{{car.carId}}" >Detay</button>
     </section>
     <section style="float:right">
 

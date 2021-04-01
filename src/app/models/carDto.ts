@@ -9,5 +9,6 @@ export interface CarDto{
     description:string;
     isRented:boolean;
     brandId:number,
-    colorId:number
+    colorId:number,
+    //imagePath:string[];
 }

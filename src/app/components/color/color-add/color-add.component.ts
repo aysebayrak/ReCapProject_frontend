@@ -3,9 +3,9 @@ import {FormGroup,FormBuilder,FormControl,Validators} from "@angular/forms"
 import { ToastrService } from 'ngx-toastr';
 import { ColorService } from 'src/app/services/color.service';
 @Component({
-  selector: 'app-brand-add',
-  templateUrl: './brand-add.component.html',
-  styleUrls: ['./brand-add.component.css']
+  selector: 'app-color-add',
+  templateUrl: './color-add.component.html',
+  styleUrls: ['./color-add.component.css']
 })
 export class ColorAddComponent implements OnInit {
  colorAddForm:FormGroup;

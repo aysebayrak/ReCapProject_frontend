@@ -45,8 +45,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-target="#creditcard">Kapat</button>
-        <button type="button" class="btn btn-success"  data-bs-target="#creditcard" (click)="AddRental()">Onayla</button>
-        <app-payment *ngIf="isAdded" [rent]= "rental"></app-payment>
+        <button type="button" class="btn btn-success"  data-bs-target="#creditcard" (click)="createRent()">Onayla</button>
+        <app-payment *ngIf="isRented" [rent]= "rental"></app-payment>
        
       </div>
     </div>
