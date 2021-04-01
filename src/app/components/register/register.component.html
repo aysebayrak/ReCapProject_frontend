@@ -1,43 +1,32 @@
   
 
 
-		<form [formGroup]="registerForm" id="register-form" class="text-left">
-
-			<div class="main-register-form">
-
-				<div class="register-group">
-
-					<div class="form-group">
-						<label for="lg_username" class="sr-only">AD</label>
-						<input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="firstname" formControlName="firstName">
-					</div>
-
-                    <div class="form-group">
-						<label for="lg_username" class="sr-only">SOYAD</label>
-						<input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="lastname" formControlName="lastName">
-					</div>
-
-                    <div class="form-group">
-						<label for="lg_email" class="sr-only">E-mail</label>
-						<input type="email" class="form-control" id="lg_email" name="lg_email" placeholder="email" formControlName="email">
-					</div>
-
-					<div class="form-group">
-						<label for="lg_password" class="sr-only">Şifre</label>
-						<input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password" formControlName="password">
-					</div>
-
-                    <div class="form-group">
-						<label for="lg_password" class="sr-only">ŞİFRE ONAY</label>
-						<input type="password" class="form-control" id="lg_confirmPassword" name="lg_confirmPassword" placeholder="confirmPassword:" formControlName="confirmPassword:">
-					</div>
-
-					<!-- <div class="form-group register-group-checkbox">
-						<input type="checkbox" id="lg_remember" name="lg_remember">
-						<label for="lg_remember">remember me</label>
-					</div> -->
-
-				</div>
-				<button type="submit" (click)="register()" class="btn register-button">ÜYE OL</button>
-			</div>
-		</form>
+		  
+<body class="text-center">
+    <main class="form-signin">
+        <form [formGroup]="registerForm">
+          <h1 class="h3 mb-3 fw-normal">Kayıt ol</h1>
+      
+          <div class="form-floating">
+            <input formControlName="firstName" type="firstName" class="form-control" id="floatingInput" placeholder="firstName" >
+            <label for="floatingInput">Ad</label>
+          </div>
+          <div class="form-floating">
+            <input formControlName="lastName" type="lastName" class="form-control" id="floatingInput" placeholder="lastName" >
+            <label for="floatingInput">Soyad</label>
+          </div>
+          <div class="form-floating">
+            <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">E-posta</label>
+          </div>
+          <div class="form-floating">
+            <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Şifre</label>
+          </div>
+      
+          <p routerLink="/login">Zaten bir hesabın var mı?</p>
+          <button (click)="register()" class="w-100 btn btn-lg btn-success" type="submit">Giriş yap</button>
+          
+        </form>
+      </main>
+        </body>
