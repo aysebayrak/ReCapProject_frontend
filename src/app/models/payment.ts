@@ -1,9 +1,10 @@
 export interface Payment {
     paymentId:number,
-    customerName: string;
+   // customerName: string;
+   customerId:number;
     price: number;
     creditCardNumber:string;
-    expirationDate:string;
-    securityCode:string;
-    creditCardPassword: string;
+    expirationDate:string;  //son kullanma tarihi
+    securityCode:string;//güvenlik kodu 
+   // creditCardPassword: string; //şifre
 }

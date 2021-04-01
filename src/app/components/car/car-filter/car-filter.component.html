@@ -1,29 +1,13 @@
 
-<div class="card mb-2">
-    <div class="card-body">
-
-        <div class="row justify-content-evenly">
-            <div class="col col-md-4">               
-                <select [(ngModel)]="brandFilter" class="form-select form-select mb-3" aria-label="Default select example">
-                    <option *ngFor="let brand of brands" [value] = "brand.id"
-                    [selected] = "getSelectedBrand(brand.id)">{{brand.brandName}}</option>
-                </select>
-            </div>
-            <div class="col col-md-4">
-                <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
-                    <option *ngFor="let color of colors" 
-                    [selected] = "getSelectedColor(color.id)" [value]="color.id">{{color.colorName}}</option>
-                </select>
-            </div>
-            <div class="col-lg-auto col-sm-12">
-                <button class="btn btn btn-dark me-3"
-                routerLink="/cars/filter/{{colorFilter}}/{{brandFilter}}">Filtrele</button> 
-           
-                <button
-                    routerLink="/cars" class="btn btn-danger">Temizle</button>
-                </div>
-           
-        </div>
-
+<div class="row">
+    <div class="col-md-4">
+      <select [(ngModel)]="brandFilter" class="form-select" aria-placeholder="Marka Seçiniz">
+        <option selected> ceren ile bulacağız </option>
+        <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
+      </select>
     </div>
-</div>
+    <div class="col-md-4">
+      <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example"> 
+        <option  *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)" >{{color.colorName}}</option>
+      </select>
+    </div>

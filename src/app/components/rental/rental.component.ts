@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
+import { CarDto } from 'src/app/models/carDto';
 import { Customer } from 'src/app/models/customer';
 import { Rental } from 'src/app/models/rental';
 import { RentalDto } from 'src/app/models/rentalDto';
@@ -24,9 +25,9 @@ export class RentalComponent implements OnInit {
   carId: number;
   rentDate: Date;
   returnDate: Date;
-  isAdded : boolean=false;
+  isRented:boolean = false; //Arabanın o nkş kıralı olup olmamması 
  
-  @Input() carForRent: Car
+  @Input() carforrental:CarDto;
 
   constructor(private rentalService: RentalService,
     private customerService: CustomerService,
@@ -50,21 +51,19 @@ export class RentalComponent implements OnInit {
     })
 
   }
-  AddRental(){
-    let newRental:Rental = {
+  createRent()
+   {
+    let rent:Rental = {
+      carId: this.carforrental.carId,
+      customerId: this.customerId,
       rentDate: this.rentDate,
       returnDate: this.returnDate,
-      carId: this.carForRent.carId,
-      customerId: this.customerId
-      
-
-    }
-  
-
-    this.rental = newRental
-    this.isAdded=true
-    this.toastrService.success("Araç kiralama işleminiz başarıyla gerçekleşti");
-  }
+      price: this.carforrental.dailyPrice
+   };
+    this.rental = rent;
+    this.isRented = true;
+    this.toastrService.success("Your rental request has been received. You are redirected to the payment page.");
+   }
 
 
     getCustomers(){

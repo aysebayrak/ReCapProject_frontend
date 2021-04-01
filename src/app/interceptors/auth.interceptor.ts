@@ -21,6 +21,8 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(newRequest);
   }
 }
+
+
 //request = urun eklemek için bilgileri girmek ve başmak 
 
 // next = bir sonraki aşamada  uygulanacak olan 

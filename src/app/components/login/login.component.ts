@@ -7,8 +7,11 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
    loginForm:FormGroup;
+  
+
   constructor(private formBuilder:FormBuilder,
     private authService:AuthService,
     private toastrService:ToastrService) { }  //servisi kullanabilmem için 

@@ -31,6 +31,7 @@ import { CarUpdateComponent } from './components/car/car-update/car-update.compo
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CarUpdateComponent,
     ColorListComponent,
     ColorUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,

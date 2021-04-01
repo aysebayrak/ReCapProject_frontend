@@ -14,6 +14,7 @@ import { ColorListComponent } from './components/color/color-list/color-list.com
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { ColorComponent } from './components/color/color.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { LoginGuard } from './guards/login.guard';
 
@@ -37,6 +38,8 @@ const routes: Routes = [
   {path: "brands/update/:brandId",component:BrandUpdateComponent},
   {path: 'colors/list',component:ColorListComponent},
   {path: "colors/update/:colorId",component:ColorUpdateComponent},
+  {path:"register",component:RegisterComponent},
+  {path:"login",component:LoginComponent,}
 
 
   {path:"login",component:LoginComponent}
