@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,Validators,FormBuilder}  from "@angular/forms"
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,
     private authService:AuthService,
-    private toastrService:ToastrService) { }  //servisi kullanabilmem için 
+    private toastrService:ToastrService,
+    private localStorage:LocalStorageService) { }  //servisi kullanabilmem için 
 
   ngOnInit(): void {
     this.createLoginForm();

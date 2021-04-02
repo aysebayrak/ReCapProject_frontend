@@ -27,15 +27,13 @@ export class RegisterComponent implements OnInit {
         firstName:["",Validators.required],
         lastName:["",Validators.required],
         password:["",Validators.required,Validators.minLength(4),Validators.maxLength(8)],
-        confirmPassword:["",Validators.required] ,//tekrrar gir şifre
+       //tekrrar gir şifre
         email:["",Validators.required]
-      },
-      {validator:this.passwordMathcValidator}  //iki şifre uysacak 
+      }
+      
     )
   }
-  passwordMathcValidator(g:FormGroup){
-    return g.get('password')?.value === g.get('confirmPassword')?.value?null:{misMatch:true}
-  }
+ 
 
 
    register(){  //kişi login olduğu zaman 
