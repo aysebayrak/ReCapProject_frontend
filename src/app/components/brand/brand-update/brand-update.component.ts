@@ -50,7 +50,7 @@ export class BrandUpdateComponent implements OnInit {
     });
   }
 
-  update() {
+  updateBrand() {
     if (this.brandUpdateForm.valid) {
       let brandModel = Object.assign({}, this.brandUpdateForm.value);
       brandModel.brandId = Number(brandModel.id);

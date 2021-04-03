@@ -9,7 +9,7 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color-list.component.css']
 })
 export class ColorListComponent implements OnInit {
-  colors : Color[] = [];
+  colors : Color[] ;
   constructor(
     private colorService: ColorService,
     private toastrService: ToastrService) { }

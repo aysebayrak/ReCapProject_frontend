@@ -35,7 +35,7 @@ export class RentalComponent implements OnInit {
     private carService: CarService) { }
 
   ngOnInit(): void {
-    this.getCustomers();
+    this.getCustomer();
     this.getRentalDetails();
 
   }
@@ -66,8 +66,8 @@ export class RentalComponent implements OnInit {
    }
 
 
-    getCustomers(){
-    this.customerService.getCustomers().subscribe(response=>{
+    getCustomer(){
+    this.customerService.getCustomer().subscribe(response=>{
       this.customers=response.data
     });
   }

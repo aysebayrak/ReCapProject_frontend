@@ -20,23 +20,10 @@ export class PaymentComponent implements OnInit {
   constructor(private rentalService:RentalService, private paymentService:PaymentService, private toastrService: ToastrService) { }
 
   ngOnInit(): void {
+
+  }
+  addPayment(){
+    
   }
 
-  addPayment()
-  {
-    let rent:Rental = this.rentForPayment;
-    let payment:Payment = {
-      creditCardNumber:this.creditCard,
-      expirationDate:this.expirationDate,
-      securityCode:this.securityCode,
-      price:this.rentForPayment.price,
-      customerId:this.rentForPayment.customerId
-    };
-     this.paymentService.addPayment(payment).subscribe(response => {
-      this.toastrService.success("Ödeme İşleminiz Başarı İle Tamamlandı ");
-   });
-   this.rentalService.AddRental(rent).subscribe(response => {
-    this.toastrService.success("Araç Kiralama İşlemi Başarılı");
- });
-  }
 }

@@ -32,6 +32,7 @@ import { ColorListComponent } from './components/color/color-list/color-list.com
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { RegisterComponent } from './components/register/register.component';
     ColorListComponent,
     ColorUpdateComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditUserComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,

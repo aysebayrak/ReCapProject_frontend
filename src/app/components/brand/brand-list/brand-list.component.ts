@@ -23,7 +23,7 @@ export class BrandListComponent implements OnInit {
     });
   }
 
-  delete(brand: Brand){
+  deleteBrand(brand: Brand){
     this.brandService.delete(brand).subscribe(response=>{
       this.toastrService.success(brand.brandName+" markası silindi","Başarılı");
       this.getBrands()

@@ -13,14 +13,15 @@ export class PaymentService {
   apiUrl = "https://localhost:44301/api/";
   constructor(private httpClient: HttpClient) { }
 
-  addPayment(payment: Payment): Observable<ResponseModel> {
-    let newPath = this.apiUrl + "creditcards/add"
-    return this.httpClient.post<ResponseModel>(newPath,payment);
+  
+ 
+  payment(payment:Payment):Observable<ResponseModel>{
+    let newPath=this.apiUrl+"rentals/payment";
+    return this.httpClient.post<ResponseModel>(newPath,payment)
   }
+ 
 
-  getPayments(): Observable<ListResponseModel<Payment>> {
-    let newPath = this.apiUrl + "creditcards/getall"
-    return this.httpClient.get<ListResponseModel<Payment>>(newPath);
-  }
+
+
 }
 

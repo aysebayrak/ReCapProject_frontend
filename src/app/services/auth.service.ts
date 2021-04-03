@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
 import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
@@ -16,10 +17,9 @@ export class AuthService {
 
   constructor(private httpClient:HttpClient,
     private localStorageService:LocalStorageService,
-    private router:Router
-    ) { }
+    private router:Router) { }
 
-  login(loginModel:LoginModel) {
+  login(loginModel:LoginModel):Observable<SingleResponseModel<TokenModel>>{
     let newPath=this.apiUrl+'login';
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"login",loginModel)
 
