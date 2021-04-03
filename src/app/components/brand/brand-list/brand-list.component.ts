@@ -10,6 +10,7 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandListComponent implements OnInit {
   brands : Brand[] =[];
+  brand : Brand
   constructor(private brandService: BrandService,
     private toastrService: ToastrService) { }
 
@@ -19,7 +20,8 @@ export class BrandListComponent implements OnInit {
 
   getBrands() {
     this.brandService.getBrands().subscribe(response=>{
-      this.brands = response.data   
+      this.brands = response.data   ;
+      this.brand=response.data[0]
     });
   }
 
