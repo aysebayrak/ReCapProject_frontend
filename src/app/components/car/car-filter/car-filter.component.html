@@ -1,8 +1,8 @@
  <div class="card mb-2"  >
     <div class="card-body">
         <div class="row md-3 ">
-           <div class="col col-md-7   ">
-               <select [(ngModel)]="brandFilter"  class="form-select form-select mb-3" aria-label="Default select example">
+           <div class="col col-md-7    ">
+               <select  [(ngModel)]="brandFilter"  class="form-select form-select-lg mb-3" aria-label="Default select example">
                   <option *ngFor="let brand of brands" [value]="brand.brandId" selected="{{getSelectedBrand(brand.brandId)}}">{{brand.brandName}}</option>
               </select>
             </div>

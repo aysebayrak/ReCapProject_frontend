@@ -1,8 +1,8 @@
 export interface Rental{
     rentalId?:number,
     carId?: number,
-    customerId?: number,
+    customerId: number,
     rentDate:Date,
     returnDate:Date,
-    price :number
+    //price? :number
 }

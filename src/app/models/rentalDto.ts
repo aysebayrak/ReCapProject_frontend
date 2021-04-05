@@ -1,9 +1,12 @@
 export interface RentalDto{
+
     rentalId: number;
-  //  carId: number;
-   // customerId: number,
-    customerName: string;
-  //  brandName: string;
+    userName:number;
+   // carId: number;
+    //customerId: number,
+    
+   brandName: string;
+   companyName:string;//şirket adı
   //  colorName: string;
    // dailyPrice: number;
     rentDate: Date;
