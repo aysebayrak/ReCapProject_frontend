@@ -7,5 +7,6 @@ export interface Car{
     description:string,
    // imagePath:string[];
     date: Date;
+    minFindeksScore?:number
 
 }

@@ -1,48 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Rent A Car Project</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink = "/cars">ARAÇLAR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">KAMPANYALAR</a>
-        </li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Listeler
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/cars/list">Araba Listesi</a></li>
-            <li><a class="dropdown-item" routerLink='/brands/list'>Marka Listesi</a></li>
-            <li><a class="dropdown-item" routerLink='/colors/list'>Renk Listesi</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">LOKASYONLAR</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <button class="btn btn-outline-success me-3" class="rounded-pill"  type="submit" class="login-btn">ÜYE GİRİŞİ</button>
-        <button class="btn btn-outline-success " class="rounded-pill"  type="submit" class="signup-btn">ÜYE OL</button>
-     
-      </form>
-      <button class="btn btn-outline-success " class="rounded-pill"   (click)="logOut()" type="submit" class="signup-btn">ÇIKIŞ</button>
-    </div>
-  </div>
-</nav> -->
-
-
-
-
-
-
-
- <nav class="navbar navbar-expand-lg" style="background-color: #212121">
+<!-- <nav class="navbar navbar-expand-lg" style="background-color: #212121">
   <div class="container-fluid">
     <a routerLink="" class="navbar-brand" style="color: white;">ReCap</a>
     <button
@@ -61,17 +17,17 @@
        
 
         <li class="nav-item dropdown active">
-          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Araba işlemleri
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" routerLink="cars" >Arabalar</a></li>
             <li><a class="dropdown-item" routerLink="cars/add" >Araba ekle</a></li>
           </ul>
         </li>  
 
         <li class="nav-item dropdown active">
-          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Marka işlemleri
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -80,17 +36,18 @@
           </ul>
         </li>  
         <li class="nav-item dropdown active">
-          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a style="color: white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Renk işlemleri
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" routerLink="colors" >Renkler</a></li>
             <li><a class="dropdown-item" routerLink="colors/add" >Renk ekle</a></li>
           </ul>
         </li> 
-
+       
       </ul>
-
+      
+      
       <div class="text-end" >
         <button routerLink="login" type="button" class="btn btn-success" style="margin-right: 10px;    background-color: #12a661;
             border-color: #084e2d;">
@@ -105,14 +62,14 @@
         <a
          
           class="d-block link-dark text-decoration-none dropdown-toggle"
-          id="dropdownUser1"
+          id="navbarDropdown"
           data-bs-toggle="dropdown"
           aria-expanded="true"
            type="button"
            style="color: white;"
         >
         
-     <!--{{this.user.firstName}} {{this.user.lastName}}--> 
+     <!--{{this.user.firstName}} {{this.user.lastName}} 
         
         </a>
         
@@ -121,3 +78,62 @@
     </div>
   </div>
 </nav> 
+
+
+ -->
+
+ <nav class="navbar navbar-expand-lg" style="background-color: #212121" >
+  <a class="navbar-brand" href="#">ReCap</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+     
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Araba İşlemleri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item"  routerLink="cars" >Arabalar</a>
+          <a class="dropdown-item" routerLink="cars/add" >Araba ekle</a>
+          <a class="dropdown-item" routerLink="cars/list">Araba Listesi</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Renk İşlemleri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="colors" >Renkler</a>
+          <a class="dropdown-item" routerLink="colors/add" >Renk ekle</a>
+          <a class="dropdown-item"routerLink="colors/update">Renkleri Güncelle</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Marka İşlemleri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="brands" >Markalar</a>
+          <a class="dropdown-item" routerLink="brands/add" >Marka ekle</a>
+          <a class="dropdown-item"  routerLink="brands/update">Markaları Listele</a>
+        </div>
+      </li>
+    </ul>
+    <div class="text-end" >
+      <button routerLink="login" type="button" class="btn btn-success" style="margin-right: 10px;    background-color: #12a661;
+          border-color: #084e2d;">
+        Giriş yap
+      </button>
+      <button routerLink="register" type="button" class="btn btn-success" style="    background-color: #12a661;
+          border-color: #084e2d;">
+        Kayıt ol
+      </button>
+    </div>
+  </div>
+</nav>
+<div style="   margin-top: 40px"></div>
+
+

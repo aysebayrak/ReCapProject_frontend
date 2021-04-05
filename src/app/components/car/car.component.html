@@ -1,57 +1,102 @@
-
-<app-car-filter></app-car-filter>
-
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div> <!--yükleniyor kısmı    dataLoaded==false  data yükü değilse  rahat göeremk içim bwskende 
-controllere ekle getalle-->
+</div> 
+<div class="container   margin-top: 50px">
+  <div class="row">
+    <div class="col-md-3">
+      <app-brand></app-brand>
+      <app-color></app-color>
 
+    </div>
+    <div  class="col-md-9">
+      <app-car-filter></app-car-filter>
+      <h4 style="margin-left: 37%;margin-top: 10px; margin-bottom: -10px">
+        ARABALAR
 
+      </h4>
 
+      <div style="width: 91%;" class="mb-3" >
+        <label for="filterText" class="form-label"></label>
+        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+          placeholder="Araç ismi giriniz" />
+       
+      </div>
+      <div *ngIf="filterText" class="alert alert-success" >
+        {{ filterText }} aradınız.
 
+      </div>
 
-<!-- <div class="mb-3">
-  <label for="filterText" class="form-label">Araba Getir</label>
-  <input type="text"  [(ngModel)]= "filterText"  class="form-control" id="fiterText" 
-  placeholder="arama ifadesi giriniz">
-</div> <!--filter için bosstrapten aldığım-->
-<!-- <div  *ngIf="filterText" class="alert alert-primay"> <!--arana kısmnımı mavi yaptı -->
-  <!-- {{filterText}}aradınız
-</div> --> 
-<!--buna bak
-*ngIf="filterText" = varsa --> 
-
-
-
-
-
-<div class="row" *ngIf="dataLoaded==true">
-
+      <div  class="row md-3 ">
+        <div class="col mb-4  "  >
+          <div  class="card   border border-primary"   *ngFor="let car of carImages"  class="card" style="width: 20rem;   margin-top: 50px" >
+            <img height="100px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/details/{{car.carId}}" class="card-img-top" 
+            class="card-img-top"  width="40%" height="70%"  />
+            <div class="card-body text-primary">
+              <section style="float: top   " >
+                <button type="button" class="btn btn-success m-auto  " routerLink="/cars/details/{{car.carId}}" >Detay</button>
+                
     
-   <div class="card"   *ngFor="let car of carImages" style="width: 18rem;"  >
-  <img height="150px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/details/{{car.carId}}" class="card-img-top" 
-    class="img-fluid img-thumbnail">
-  <div class="card-body">
-    <h5 class="card-title">{{car.description}}</h5>
-   
-  </div>
-  <ul  class="list-group list-group-flush">
-    <li class="list-group-item">Marka:{{car.brandName |uppercase}}</li> <!--hepsibni büyük harfle göster-->
-    <li class="list-group-item">Model:{{car.modelYear}}</li>
-    <li class="list-group-item">Günlük Fiyat:{{car.dailyPrice  |currency: "TRY":"symbol-narrow":"1.2-2"}}</li> <!--ek fiyat  currency =para birimi göster-->
-  </ul> 
-  <div class="card-body">
-    <section style="float:left">
-      <button type="button" class="btn btn-secondary  " routerLink="/cars/details/{{car.carId}}" >Detay</button>
-    </section>
-    <section style="float:right">
+              </section>
+  
+            </div>
 
-      <button type="button" class="btn btn-secondary ">Kirala</button>
-    </section>
-  </div>
+        </div>
+     
 
+
+     
+        
+
+        </div>
+
+
+      </div>
+      
+
+    </div>
+
+  </div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--thead=başlık eklek için-->
 
 

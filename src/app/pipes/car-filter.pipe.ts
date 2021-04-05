@@ -13,7 +13,10 @@ export class CarFilterPipe implements PipeTransform {
     ? value.filter((c:Car)=> c.description.toLocaleLowerCase().indexOf(filterText)!==-1)
     :value;
   }
+
 }
+
+
 
 
 

@@ -17,6 +17,7 @@ export class CarFilterComponent implements OnInit {
   colorFilter: number;
   selectedBrand: number;
   selectedColor: number;
+ 
 
 
   constructor(private brandService: BrandService,
@@ -58,5 +59,6 @@ export class CarFilterComponent implements OnInit {
   setSelectedBrand(brandId: number){
     this.selectedBrand = brandId;
   }
+ 
 
 }

@@ -1,13 +1,27 @@
+ <div class="card mb-2"  >
+    <div class="card-body">
+        <div class="row md-3 ">
+           <div class="col col-md-7   ">
+               <select [(ngModel)]="brandFilter"  class="form-select form-select mb-3" aria-label="Default select example">
+                  <option *ngFor="let brand of brands" [value]="brand.brandId" selected="{{getSelectedBrand(brand.brandId)}}">{{brand.brandName}}</option>
+              </select>
+            </div>
+           <div class="col col-md-4">
+                  <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+                      <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)"  >{{color.colorName}}</option>
+                    </select>
+            </div>
 
-<div class="row">
-    <div class="col-md-4">
-      <select [(ngModel)]="brandFilter" class="form-select" aria-placeholder="Marka Seçiniz">
-        <option selected> </option>
-        <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example"> 
-        <option  *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)" >{{color.colorName}}</option>
-      </select>
-    </div>
+          <div class="col-lg-auto col-sm-12">
+              <button class="btn btn btn-dark me-3  "
+               routerLink="/cars/filter/{{brandFilter}}/{{colorFilter}}" class="btn btn-dark  btn-lg" >Filtrele</button> 
+               
+               <button
+               routerLink="/cars" class="btn btn-success  btn-lg ">Temizle</button>
+            </div>
+          
+        </div>  
+
+    </div>    
+</div> 
+

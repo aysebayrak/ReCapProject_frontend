@@ -1,7 +1,19 @@
+  
+<!-- <div style="margin-top:36px" class="mb-3">
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="Renk giriniz">
+</div>
+<select [(ngModel)]="currentColor" class="form-select" (change)="setQueryParams(currentColor)" aria-label="Default select example">
+  <option [selected]="isAllColorSelected()" [ngValue]=undefined>Tüm renkler</option>
+  <option [selected]="isCurrentColor(color)" *ngFor="let color of colors |colorFilter:filterText; index as i" [ngValue]="color">{{color.colorName}}</option>
+</select> -->
+
+
+
 <div *ngIf="dataLoaded==false" class="d-flex justify-content-center">
   <div class="spinner-grow text-info" role="status" aria-hidden="true"></div>
 </div>
-<div class="my-1">
+<div class="mb-3">
   <input type="text" [(ngModel)]="filterText" class="form-control" id="colorFilter" placeholder="Renk giriniz...">
 </div>
 <li [class] = "getAllColorClass()" routerLink = "/cars">Tüm Araçlar</li>

@@ -8,7 +8,8 @@ export interface CarDto{
     dailyPrice:number;
     description:string;
     isRented:boolean;
-    brandId:number,
-    colorId:number,
+    brandId?:number,
+    colorId?:number,
     //imagePath:string[];
+    minFindeksScore:number
 }

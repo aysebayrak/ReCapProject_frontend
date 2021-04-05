@@ -44,7 +44,7 @@ export class ColorUpdateComponent implements OnInit {
  updateColor() {
   if (this. colorUpdateForm.valid) {
     let colorModel = Object.assign({}, this.colorUpdateForm.value);
-    colorModel.brandId = Number(colorModel.id);
+    colorModel.brandId = Number(colorModel.colorId);
     this.colorService.update(colorModel).subscribe(
       (response) => {
         this.toastrService.success(response.message, 'Başarılı');

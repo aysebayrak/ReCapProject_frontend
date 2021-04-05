@@ -25,10 +25,19 @@ export class BrandListComponent implements OnInit {
     });
   }
 
-  deleteBrand(brand: Brand){
-    this.brandService.delete(brand).subscribe(response=>{
-      this.toastrService.success(brand.brandName+" markası silindi","Başarılı");
-      this.getBrands()
+  deleteBrand(brand:Brand){
+    this.brandService.delete(brand).subscribe((response=>{
+      this.toastrService.success("Araç ismi silindi")
+      setTimeout(function(){
+        location.reload()
+      },400)
+    }),errorResponse=>{
+      if(errorResponse.error.error.length>0){
+        for (let i = 0; i < errorResponse.error.error.length; i++) {
+          this.toastrService.error(errorResponse.error.error[i].ErrorMessage,"Doğrulama hatası")
+          
+        }
+      }
     })
   }
 }

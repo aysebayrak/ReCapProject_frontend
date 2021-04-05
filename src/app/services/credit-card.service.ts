@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CreditCard } from '../models/creditCard';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class CreditCardService {
 
   apiUrl="https://localhost:44301/api/";
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,
+    private authService:AuthService) { }
 
   addCreditCard(card:CreditCard):Observable<ResponseModel>{
     let newPath=this.apiUrl+"creditCards/add";
@@ -34,6 +36,11 @@ export class CreditCardService {
     return this.httpClient.post<ResponseModel>(newPath,card);
  
    }
+  // saveCreditCard(payment:Payment):Observable<ResponseModel>{
+  //   let customerCreditCard:CreditCard = {customerId:this.authService.currentUserId,cardId:payment.pa}
+  //   let newPath = this.apiUrl +"customercreditcard/add"
+  //   return this.httpClient.post<ResponseModel>(newPath,customerCreditCard)
+  // }
 
 
 
