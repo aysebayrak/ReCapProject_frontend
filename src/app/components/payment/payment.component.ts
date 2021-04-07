@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CreditCard } from 'src/app/models/creditCard';
@@ -37,9 +38,19 @@ export class PaymentComponent implements OnInit {
     private toastrService: ToastrService,
     private formBuilder:FormBuilder,
     private creditCardService:CreditCardService,
-    private carService:CarService) { }
+    private carService:CarService,
+    private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params=>{
+      if(params['rental']){
+        this.rental=JSON.parse(params['rental']);
+        this.getCar();
+        this.getCardByCustomer();
+        this.createCreditCardForm();
+
+      }
+    })
 
   }
 
