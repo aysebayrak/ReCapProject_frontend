@@ -56,7 +56,7 @@ export class PaymentComponent implements OnInit {
     });
   }
   
-   record(){
+   record(){  //kayıt
      let cardModel:CreditCard={
        creditCardNumber:this.creditCardNumber,
        nameOnTheCard: this.nameOnTheCard,
@@ -81,3 +81,4 @@ export class PaymentComponent implements OnInit {
   }
 
 }
+

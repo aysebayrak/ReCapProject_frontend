@@ -58,7 +58,7 @@ export class RentalComponent implements OnInit {
       customerId: this.customerId,
       rentDate: this.rentDate,
       returnDate: this.returnDate,
-      price: this.carforrental.dailyPrice
+     // price: this.carforrental.dailyPrice
    };
     this.rental = rent;
     this.isRented = true;

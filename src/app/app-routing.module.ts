@@ -13,13 +13,14 @@ import { ColorAddComponent } from './components/color/color-add/color-add.compon
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { ColorComponent } from './components/color/color.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  {path :"", pathMatch:"full", component: CarComponent},
+  {path:"",component:HomeComponent},
   {path: "cars", component: CarComponent},
   {path:"brands",component: BrandComponent},
   {path:"colors",component: ColorComponent},
