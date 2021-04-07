@@ -127,9 +127,7 @@ export class PaymentComponent implements OnInit {
       cvv:this.cvv,
     });
   }
-  setCardInfos2(){
-   this.createCreditCardForm
-  }
+  
   // getCar(){
   //   this.carService.getCarDetailsByCarId(this.rental.carId).subscribe(response=>{
   //     this.cars=response.data;
