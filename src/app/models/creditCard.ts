@@ -1,4 +1,5 @@
 export interface CreditCard{
+    cardId?:number;
     paymentId?:number,
     customerId:number;
     nameOnTheCard:string;//kart üzerindeki isim

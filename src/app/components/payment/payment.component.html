@@ -1,0 +1,112 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button (click)="payment()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">Kartınızı Kaydetmek İstermisiniz?</div>
+      <div class="modal-footer">
+        <button (click)="save()" type="button" class="btn btn-success">Kartı Kaydet</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-body">
+
+    <!-- rental detail -->
+    <table class="table" style="border-color: rgb(17, 17, 17);">
+
+      <thead>
+        <tr>
+          <th>Marka</th>
+          <th>Renk</th>
+          <th>Model Yılı</th>
+          <th>Kiralama Tarihi</th>
+          <th>Teslim Tarihi</th>
+          <th>Günlük Kiralama Ücreti</th>
+          <th>Toplam Ödenecek Tutar</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngIf="car!=undefined">
+          <td>{{car.brandName}}</td>
+          <td>{{car.colorName}}</td>
+          <td>{{car.modelYear}}</td>
+          <td>{{rental.rentDate}}</td>
+          <td>{{rental.returnDate}}</td>
+          <td>{{car.dailyPrice | vatAdded:8 |currency}}</td>
+          <td><strong class="text-danger">{{quantity | currency}}</strong></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <!-- credit-card -->
+
+    <img src="{{imageURL}}/uploads/credit-card.png" alt="No IMG" style="width: 240px;">
+    <div>
+
+      <div class="icons">
+        <img src="https://img.icons8.com/color/48/000000/visa.png" />
+        
+        
+      </div>
+
+      <form [formGroup]="creditCardForm">
+        <div *ngIf="creditCards.length>0" class="mb-3" style="width: 12rem;">
+          <label for="customerCards">Kredi Kartınız </label>
+          <select class="form-control" (ngModelChange)="setCardInfos()" formControlName="customerCard" required
+            id="customerCard" name="customerCard">
+            <option *ngFor="let card of creditCards" [value]="card.creditCardId" class="form-control">{{card.creditCardNumber}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" id="nameOnTheCard" class="form-control" placeholder="nameOnTheCard"
+            formControlName="nameOnTheCard">
+          <label for="nameOnTheCard">Kart Üzerindeki İsim</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" id="creditCardNumber" class="form-control" placeholder="creditCardNumber" formControlName="creditCardNumber">
+          <label for="creditCardNumber">Kart Numarası</label>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-floating mb-3">
+              <input type="text" id="expirationDate" class="form-control" placeholder="expirationDate"
+                formControlName="expirationDate">
+              <label for="expirationDate">Son Kullanma Tarihi</label>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-floating mb-3">
+              <input type="text" id="cvv" class="form-control" placeholder="cvv" formControlName="cvv">
+              <label for="cvv">CVV</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- payment -->
+
+        <div class="card-footer">
+          <div class="row">
+            <button (click)="payment()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="{{imageURL}}/uploads/yellowCard.png" alt="No IMG" style="width: 40px;">
+              <img src="{{imageURL}}/uploads/redCard.png" alt="No IMG" style="width: 40px;">
+              <img src="{{imageURL}}/uploads/blueCard.png" alt="No IMG" style="width: 40px;">
+              <strong>{{ quantity | currency }} PAY </strong>
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

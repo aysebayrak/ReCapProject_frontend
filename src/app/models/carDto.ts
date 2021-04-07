@@ -2,7 +2,7 @@
 export interface CarDto{
     carId:number;
     carName:string;
-    brandName:string;
+    brandName?:string;
     colorName:string;
     modelYear:number;
     dailyPrice:number;

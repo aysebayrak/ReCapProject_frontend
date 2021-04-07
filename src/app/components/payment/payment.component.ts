@@ -77,7 +77,58 @@ export class PaymentComponent implements OnInit {
 
 
   addPayment(){
+    if(this.quantity> 100){
+      let paymentModel:Payment={
+        quantity:this.quantity
+      }
+      this.paymentService.payment(paymentModel).subscribe(response=>{
+        this.toastrService.success("Ödeme İşlemi Başarılı");
+      },error =>{
+        this.toastrService.error(error.error);
+        
+      })
+    }
     
+    
+  }
+  getCardByCustomer(){
+    this.creditCardService.getCustomerIdCreditCard(this.rental.customerId).subscribe(response=>{
+      this.creditCard=response.data;
+      this.creditCard.forEach(response=>{
+        this.creditCardNumber=response.creditCardNumber;
+        this.nameOnTheCard=response.nameOnTheCard;
+        this.expirationDate=response.expirationDate;
+        this.cvv=response.cvv;
+      });
+    });
+  }
+  setCardInfos(){ //kart bilgilerini ayarlamakk için
+    this.createCreditCardForm.patchValue({
+      creditCardNumber:this.creditCardNumber,
+      nameOnTheCard:this.nameOnTheCard,
+      expirationDate:this.expirationDate,
+      cvv:this.cvv,
+    });
+  }
+  getCar(){
+    this.carService.getCarDetailsByCarId(this.rental.carId).subscribe(response=>{
+      this.car=response.data;
+      this.totalPayment();
+    })
+  }
+  totalPayment(){
+    if(this.rental.returnDate!=null){
+      let rentDate=new Date(this.rental.returnDate.toString());
+      let returnDate=new Date(this.rental.rentDate.toString());
+      let difference =(rentDate.getTime()-returnDate.getTime());
+      let differenceOfDays = Math.ceil(difference / (1000 * 3600 * 24));
+      if(differenceOfDays==0){
+        differenceOfDays=1;
+
+      }
+      this.quantity=differenceOfDays*(this.car.dailyPrice+(this.car.dailyPrice*8/100)); //kdv hesapla 
+    }
+
   }
 
 }
