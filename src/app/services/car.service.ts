@@ -35,9 +35,9 @@ import { CarDto } from '../models/carDto';
   }
  
 
-  getCarDetailsByCarId(carId:number):Observable<ListResponseModel<CarDto>>{
+  getCarDetailsByCarId(carId:number):Observable<ListResponseModel<Car>>{
     let newPath = this.apiUrl + "cars/getcardetailbycarid?carId=" + carId;
-    return this.httpClient.get<ListResponseModel<CarDto>>(newPath);
+    return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
   getCarByColorAndBrand(colorId:number, brandId:number) : Observable<ListResponseModel<Car>>{
     let newPath = this.apiUrl + "cars/getbycolorandbrandid?colorId="+colorId+"&brandId="+brandId;

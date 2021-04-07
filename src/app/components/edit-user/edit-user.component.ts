@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
@@ -30,8 +30,46 @@ export class EditUserComponent implements OnInit {
   }
   createProfileAddForm(){
     this.editProfileForm=this.formBuilder.group({
-      
+      firstName:["",Validators.required],
+      lastName:["",Validators.required],
+      email:["",Validators.required],
+      password:["",Validators.required]
     })
   }
+  getUser(){
+    this.userService.getByEmail(localStorage.getItem('email')!).subscribe(response=>{
+      this.user=response.data;
+      this.editProfileForm.setValue({
+        firstName:this.user.firstName,
+        lastName:this.user.lastName,
+        email:this.user.email,
+        password:""
+      })
+    },responseError=>{
+      this.toastrService.error(responseError.console.error);
+      
+    })
+ }
+ editProfile(){//düzenle 
+   if(this.editProfileForm.valid){
+     let profilModel=Object.assign({},this.editProfileForm.value)
+     console.log(this.user)
+     profilModel.userId=this.user.userId;
+     console.log(profilModel)
+     this.userService.userUpdate(profilModel).subscribe(response=>{
+       this.toastrService.success("Tekrar Giriş Lütfen");
+       this.router.navigate(["/home"]);
+       this.authService.logOut();
+
+     },
+     responseError=>{
+       this.toastrService.error(responseError.error);
+     });
+   }else{
+     this.toastrService.error("HATA")
+   }
+ }
 
 }
+
+

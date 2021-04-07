@@ -71,6 +71,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

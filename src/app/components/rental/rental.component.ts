@@ -17,7 +17,7 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class RentalComponent implements OnInit {
   customers : Customer[] = [];
-  cars : CarDto;
+  cars : Car;
   rentals: Rental[] = []; 
   rentaldto: RentalDto[];
   rental: Rental;

@@ -14,7 +14,7 @@ import { CarService } from 'src/app/services/car.service';
 export class CarDetailComponent implements OnInit {
 
   carImages:CarImage[]=[];
-  car:CarDto;
+  car:Car;
   dataLoaded = false;
   imageUrl="https://localhost:44301";
 

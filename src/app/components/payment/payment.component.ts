@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
+import { CarDto } from 'src/app/models/carDto';
 import { CreditCard } from 'src/app/models/creditCard';
 import { Payment } from 'src/app/models/payment';
 import { Rental } from 'src/app/models/rental';
@@ -21,6 +22,8 @@ export class PaymentComponent implements OnInit {
   apiUrl=""
    rental:Rental;
    car:Car;
+   cars:Car[]=[];
+   
    quantity:number;
    creditCardNumber:string;
    nameOnTheCard: string;
@@ -45,7 +48,10 @@ export class PaymentComponent implements OnInit {
     this.activatedRoute.params.subscribe(params=>{
       if(params['rental']){
         this.rental=JSON.parse(params['rental']);
-        this.getCar();
+        if(params['carId']){
+          this.getCar(params['carId']);
+        }
+       
         this.getCardByCustomer();
         this.createCreditCardForm();
 
@@ -61,7 +67,7 @@ export class PaymentComponent implements OnInit {
       cardNumber:["",Validators.required,Validators.maxLength(20)],
       cvv:["",Validators.required,Validators.maxLength(3)],
       expirationDate:["",Validators.required]
-
+      
 
 
     });
@@ -121,11 +127,21 @@ export class PaymentComponent implements OnInit {
       cvv:this.cvv,
     });
   }
-  getCar(){
-    this.carService.getCarDetailsByCarId(this.rental.carId).subscribe(response=>{
-      this.car=response.data;
+  setCardInfos2(){
+   this.createCreditCardForm
+  }
+  // getCar(){
+  //   this.carService.getCarDetailsByCarId(this.rental.carId).subscribe(response=>{
+  //     this.cars=response.data;
+  //     this.totalPayment();
+  //   })
+  // }
+  getCar(carId: number){
+    this.carService.getCarDetailsByCarId(carId).subscribe(response=>{
+      this.car= response.data[0];
       this.totalPayment();
     })
+
   }
   totalPayment(){
     if(this.rental.returnDate!=null){
@@ -144,3 +160,6 @@ export class PaymentComponent implements OnInit {
 
 }
 
+
+
+          

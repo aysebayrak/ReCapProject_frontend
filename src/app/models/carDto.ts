@@ -11,5 +11,6 @@ export interface CarDto{
     brandId?:number,
     colorId?:number,
     //imagePath:string[];
-    minFindeksScore:number
+    minFindeksScore:number,
+   // date:Date
 }
