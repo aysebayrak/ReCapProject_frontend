@@ -35,6 +35,7 @@ export class PaymentComponent implements OnInit {
 
 
     creditCardForm:FormGroup;
+    imageUrl="https://localhost:44301"
  
   constructor(private rentalService:RentalService, 
     private paymentService:PaymentService, 
