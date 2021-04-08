@@ -34,6 +34,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeComponent } from './components/home/home.component';
+import { RentalListComponent } from './components/rental-list/rental-list.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,
     EditUserComponent,
-    HomeComponent
+    HomeComponent,
+    RentalListComponent
   ],
   imports: [   //dışardan aldıklarım         bundan sonra backendle iletişime geç (cors hatası= backende hata)
     BrowserModule,

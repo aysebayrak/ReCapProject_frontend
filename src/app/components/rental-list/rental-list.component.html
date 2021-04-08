@@ -1,0 +1,26 @@
+  
+<div *ngIf="!rentals" class="alert alert-info w-100" role="alert">
+    Kiralama Yok
+  </div>
+  <table *ngIf="rentals" class="table table-striped m-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Marka</th>
+        <th scope="col">Kullancı</th>
+        <th scope="col">Şirket</th>
+        <th scope="col">Kiralama Tarihi</th>
+        <th scope="col">Teslim Tarihi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rental of rentals">
+        <th scope="row">{{rentalDto.rentalId}}</th>
+        <th scope="row">{{rentalDto.brandName}}</th>
+        <th scope="row">{{rentalDto.userName}}</th>
+        <th scope="row">{{rentalDto.companyName}}</th>
+        <th scope="row">{{rentalDto.rentDate}}</th>
+        <th scope="row">{{rentalDto.returnDate}}</th>
+      </tr>
+    </tbody>
+  </table>

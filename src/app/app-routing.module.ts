@@ -13,6 +13,8 @@ import { ColorAddComponent } from './components/color/color-add/color-add.compon
 import { ColorListComponent } from './components/color/color-list/color-list.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { ColorComponent } from './components/color/color.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -43,6 +45,10 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path: "brands/update/",component:BrandUpdateComponent},
  // {path:"profil",component:Profil}
+ {path:"customers",component:CustomerComponent},
+  {path:"user/edit",component:EditUserComponent},
+  
+
   
 
 ];
