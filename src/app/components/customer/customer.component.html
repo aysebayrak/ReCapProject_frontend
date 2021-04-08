@@ -1,24 +1,26 @@
-<h2 class="text-center">Müşteri Listesi</h2>
-<div class="d-flex justify-content-center">
-    <div  *ngIf="dataLoaded==false"  class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-</div>
-
-
-
-<table *ngIf="dataLoaded==true" class="table table-success table-striped" >
-    <thead>
+<div *ngIf="!customers" class="alert alert-info w-100" role="alert">
+    Markalar YOk 
+  </div>
+  
+  <table *ngIf="customers" class="table table-striped m-4">
+      <thead>
         <tr>
-            <th>Id</th>
-            <th>Müşteri Adı</th>
-        
+          <th scope="col">#</th>
+          <th scope="col">Şirket</th>
+          <th scope="col">Ad</th>
+          <th scope="col">SoyAd</th>
+          <th scope="col">E Mail</th>
+          <th scope="col">Findex Puanı</th>
         </tr>
-    </thead>
-    <tr *ngFor="let customer of customers">
-        <td>{{customer.customerId}}</td>
-       
-        <td>{{customer.customerName}}</td>
-    </tr>
-
-</table>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.customerId}}</td>
+          <td>{{customer.companyName}}</td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.findexScore}}</td>
+        </tr>
+      </tbody>
+    </table>

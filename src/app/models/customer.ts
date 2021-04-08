@@ -1,4 +1,12 @@
 export interface Customer{
     customerId :number,
-    customerName :string,
+    userId:number,
+    firstName:string,
+    lastName:string,
+    email:string,
+    componyName:string,
+    findexScore?:number,
+
+
+
 }

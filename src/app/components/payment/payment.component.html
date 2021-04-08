@@ -46,12 +46,13 @@
 
     <!-- credit-card -->
 
-    <img src="{{imageURL}}/uploads/credit-card.png" alt="No IMG" style="width: 240px;">
+    <img src="{{imageUrl}}/uploads/credit-card.png" alt="No IMG" style="width: 240px;">
     <div>
 
       <div class="icons">
         <img src="https://img.icons8.com/color/48/000000/visa.png" />
-        
+        <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+        <img src="https://img.icons8.com/color/48/000000/maestro.png" />
         
       </div>
 
@@ -97,9 +98,9 @@
         <div class="card-footer">
           <div class="row">
             <button (click)="addPayment()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <img src="{{imageURL}}/uploads/yellowCard.png" alt="No IMG" style="width: 40px;">
-              <img src="{{imageURL}}/uploads/redCard.png" alt="No IMG" style="width: 40px;">
-              <img src="{{imageURL}}/uploads/blueCard.png" alt="No IMG" style="width: 40px;">
+              <img src="{{imageUrl}}/uploads/yellowCard.png" alt="No IMG" style="width: 40px;">
+              <img src="{{imageUrl}}/uploads/redCard.png" alt="No IMG" style="width: 40px;">
+              <img src="{{imageUrl}}/uploads/blueCard.png" alt="No IMG" style="width: 40px;">
               <strong>{{ quantity | currency }} PAY </strong>
             </button>
           </div>
