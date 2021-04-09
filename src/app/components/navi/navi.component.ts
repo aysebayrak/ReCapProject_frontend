@@ -17,6 +17,7 @@ export class NaviComponent implements OnInit {
   
   loginUser:any=[];
   ngOnInit(): void {
+    
 
   }
   login(){
@@ -27,5 +28,6 @@ export class NaviComponent implements OnInit {
     this.toastr.info("Çıkış Başarılı ");
   
   }
+ 
 
 }
