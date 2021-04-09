@@ -32,8 +32,8 @@
           <div class="card mb-3">
             <img src="{{imageUrl}}/{{car.imagePath}}" class="card-img-top">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <a routerLink="/cars/details/{{car.carId}}" class="btn btn-primary">Detaylar</a>
+              <h5 class="card-title">{{car.description  | uppercase}}</h5>
+              <a routerLink="/cars/details/{{car.carId}}  "    class="btn btn-dark">Detaylar</a>
             </div>
           </div>
 
