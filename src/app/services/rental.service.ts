@@ -21,10 +21,10 @@ export class RentalService {
 
     return this.httpClient.get<ListResponseModel<RentalDto>>(newPath);
   }
-  getRentalDetails(): Observable<ListResponseModel<RentalDto>>{
-    let newPath = this.apiUrl +"rentals/getrentaldetails"
-    return this.httpClient.get<ListResponseModel<RentalDto>>(newPath);
-  }
+  // getRentalDetails(): Observable<ListResponseModel<RentalDto>>{
+  //   let newPath = this.apiUrl +"rentals/getrentaldetails"
+  //   return this.httpClient.get<ListResponseModel<RentalDto>>(newPath);
+  // }
   // getRentalByCarId(carId: number): Observable<ListResponseModel<Rental>> {
   //   let newPath = this.apiUrl +"rentals/getbycarid?id="+carId;
   //   return this.httpClient.get<ListResponseModel<Rental>> (newPath);

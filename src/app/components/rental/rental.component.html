@@ -1,6 +1,86 @@
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#carForRent"> Kirala </button>
+<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#rentModal">
+  Kirala
+</button>
 
-<!-- Modal -->
+<div *ngIf="isLogOK()" class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">
+          Kirala
+        </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <label for="dailyPrice" class="col-4 col-form-label">Günlük Kiralama Ücreti:</label>
+        <div class="form-group row mb-2">
+          <div class="col-12">
+            <input id="dailyPrice" type="text" disabled="disabled" class="form-control"
+              [value]="car.dailyPrice | currency " />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Müşteriler</label>
+          <select class="form-control text-capitalize" id="exampleFormControlSelect1">
+            <option value=0>-- Müşteri Seçiniz --</option>
+
+            <option *ngFor="let customer of customers" [ngValue]="customer.customerId" class="text-capitalize">
+              {{ customer.firstName }} {{ customer.lastName }}
+            </option>
+
+          </select>
+        </div>
+
+        <label for="rentDate" class="col-4 col-form-label">Kiralama Tarihi:</label>
+        <div class="form-group row mb-2">
+          <div class="col-12">
+            <input class="form-control" min="{{ getDate(1) }}" value="{{ getDate(1) }}" type="date"
+              [(ngModel)]="rentDate" />
+          </div>
+        </div>
+
+        <label for="returnDate" class="col-4 col-form-label">Teslim Tarihi:</label>
+        <div class="form-group row">
+          <div class="col-12">
+            <input class="form-control" type="date" min="{{ getDate(2) }}" value="{{ getDate(2) }}"
+              [(ngModel)]="returnDate" />
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button data-dismiss="modal" (click)="create()" type="button" class="btn btn-outline-success">
+          Kirala
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#carForRent"> Kirala </button>
+
+<!-- Modal 
 <div class="modal fade" id="carForRent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -51,4 +131,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

@@ -19,7 +19,7 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class PaymentComponent implements OnInit {
   
-  apiUrl=""
+ 
    rental:Rental;
    car:Car;
    cars:Car[]=[];
@@ -121,7 +121,7 @@ export class PaymentComponent implements OnInit {
     });
   }
   setCardInfos(){ //kart bilgilerini ayarlamakk için
-    this.createCreditCardForm.patchValue({
+    this.creditCardForm.patchValue({
       creditCardNumber:this.creditCardNumber,
       nameOnTheCard:this.nameOnTheCard,
       expirationDate:this.expirationDate,

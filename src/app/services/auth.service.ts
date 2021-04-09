@@ -12,37 +12,31 @@ import { LocalStorageService } from './local-storage.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
-  apiUrl="https://localhost:44301/api/auth";
 
-  constructor(private httpClient:HttpClient,
-    private localStorageService:LocalStorageService,
-    private router:Router) { }
+  apiUrl = "https://localhost:44301/api/auth/";
 
-  login(loginModel:LoginModel):Observable<SingleResponseModel<TokenModel>>{
-    let newPath=this.apiUrl+'login';
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"login",loginModel)
+  constructor(private httpClient: HttpClient,
+              private localStorageService: LocalStorageService) { }
 
-
+  login(loginModel: LoginModel): Observable<SingleResponseModel<TokenModel>> {
+    let newPath = this.apiUrl + 'login';
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath, loginModel);
   }
-  isAuthenticated(){
+
+  isAuthenticated() {
     return this.localStorageService.isExist("token");
   }
-  register(registerModel:RegisterModel){
-    let newPath=this.apiUrl+'login';
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"register",registerModel)
 
-
+  register(registerModel: RegisterModel): Observable<SingleResponseModel<TokenModel>> {
+    let newPath = this.apiUrl + 'register';
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(newPath, registerModel);
   }
-  logOut(){
+
+  logOut() {
     localStorage.removeItem("token");  //silme
     localStorage.removeItem("user");
     localStorage.removeItem("email");
   }
-  
-
-
-
-  
 }
-

@@ -1,6 +1,6 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
-</div> 
+</div>
 <div class="container   margin-top: 50px">
   <div class="row">
     <div class="col-md-3">
@@ -8,52 +8,51 @@
       <app-color></app-color>
 
     </div>
-    <div  class="col-md-9">
+    <div class="col-md-9">
       <app-car-filter></app-car-filter>
       <h4 style="margin-left: 37%;margin-top: 10px; margin-bottom: -10px">
         ARABALAR
 
       </h4>
 
-      <div style="width: 91%;" class="mb-3" >
+      <div style="width: 91%;" class="mb-3">
         <label for="filterText" class="form-label"></label>
         <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
           placeholder="Araç ismi giriniz" />
-       
+
       </div>
-      <div *ngIf="filterText" class="alert alert-success" >
+      <div *ngIf="filterText" class="alert alert-success">
         {{ filterText }} aradınız.
 
       </div>
 
-      <div  class="row md-3 ">
-        <div class="col mb-4  "  >
-          <div  class="card   border border-primary"   *ngFor="let car of carImages"  class="card" style="width: 20rem;   margin-top: 50px" >
-            <img height="100px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/details/{{car.carId}}" class="card-img-top" 
-            class="card-img-top"  width="40%" height="70%"  />
-            <div class="card-body text-primary">
-              <section style="float: top   " >
-                <button type="button" class="btn btn-success m-auto  " routerLink="/cars/details/{{car.carId}}" >Detay</button>
-                
-    
-              </section>
-  
+      <div class="row">
+        <div *ngFor="let car of carImages" class="col-md-4">
+
+          <div class="card mb-3">
+            <img src="{{imageUrl}}/{{car.imagePath}}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a routerLink="/cars/details/{{car.carId}}" class="btn btn-primary">Detaylar</a>
             </div>
+          </div>
+
+          <!-- <div class="card">
+            <div  class="card border border-primary" class="card">
+
+              <img height="100px" src="{{imageUrl}}/{{car.imagePath}}"  routerLink="/cars/details/{{car.carId}}" class="card-img-top">
+  
+              <div class="card-body text-primary">
+                  <button type="button" class="btn btn-success m-auto  " routerLink="/cars/details/{{car.carId}}">Detay</button>
+              </div>
+          </div> -->
 
         </div>
-     
-
-
-     
-        
-
-        </div>
-
-
       </div>
-      
+
 
     </div>
+
 
   </div>
 
@@ -91,15 +90,4 @@
 
 
 
-
-
-
-
-
-
 <!--thead=başlık eklek için-->
-
-
-
-
-
