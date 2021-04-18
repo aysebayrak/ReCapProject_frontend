@@ -1,6 +1,7 @@
 # Recap
   Projenin Bağlı Olduğu Apı:[ReCapProject](https://github.com/aysebayrak812/ReCapProject)
 # Projenin İçeriği
+Kurumsal mimari yapısı kullanılarak *Clean Code* ile *SOLID* kuralları ile oluşturulmuştur.<br/> Angular ile yazılmış, Araba kiralama fikri üzerine oluşmuştur.
 - CRUD Operasyonlar
   - Add
   - Read
