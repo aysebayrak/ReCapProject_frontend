@@ -15,6 +15,10 @@
 - Reactive Forms
 - Validasyon işlemleri
   - Toastr
+- Models
+- Services
+- Custom pipes
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
