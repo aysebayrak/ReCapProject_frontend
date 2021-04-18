@@ -1,4 +1,20 @@
 # Recap
+  Projenin Bağlı Olduğu Apı:[ReCapProject](https://github.com/aysebayrak812/ReCapProject)
+# Projenin İçeriği
+- CRUD Operasyonlar
+  - Add
+  - Read
+  - Update
+  - Delete
+- Filtreleme
+- Auth
+  - Login
+  - Register
+  - Profile Update
+  - Password Update
+- Reactive Forms
+- Validasyon işlemleri
+  - Toastr
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
